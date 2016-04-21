@@ -1,0 +1,21 @@
+{#
+Copyright (C) Jeremy Breiding, Inc - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Jeremy Breiding jbreiding@hotmail.com, 2016
+#}
+{% block body %}Title: {{ season }} {{ year }} Standings
+Date: {{ date }}
+Tags: {{ year }}, {{ season }}
+Category: standings
+Summary: {{ season }} {{ year }} Standings
+{% for division in team_list %}
+{{ division.division }}
+=====
+| Team Name | Captain | Wins | Loss | Tie | Points |
+| --- | --- | --- | --- | --- | --- |
+{% for team in division.teams %}| {{ team.name }} | {{ team.captain }} | {{ team.wins }} | {{ team.losses }} | {{ team.ties }} | {{ team.points }} |
+  {% endfor %}
+{% endfor %}
+
+{% endblock %}

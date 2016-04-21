@@ -1,0 +1,24 @@
+{#
+Copyright (C) Jeremy Breiding, Inc - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Jeremy Breiding jbreiding@hotmail.com, 2016
+#}
+{% block body %}Title: {{ season }} {{ year }} Teams
+Date: {{ date }}
+Tags: {{ year }}, {{ season }}
+Category: rosters
+Summary: {{ season }} {{ year }} Teams
+{% for division in team_list %}
+{{ division.division }}
+=====
+| Team Name | Captain |
+| ---- ---- | ------- |
+{% for team in division.teams %}| {{ team.name }} | {{ team.captain }} |
+{% endfor %}
+{% endfor %}
+
+---
+**NOTE: Please review and observe the [league guidelines]({filename}/pages/leagueguidelines.md) for the upcoming season. Roster changes will not be allowed on playoff day under any circumstances. Any team failing to field a team from their roster for any playoff matches will be disqualified from the playoffs.**
+
+{% endblock %}

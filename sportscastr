@@ -1,0 +1,247 @@
+#!/usr/bin/env python
+"""
+Copyright (C) Jeremy Breiding, Inc - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Jeremy Breiding jbreiding@hotmail.com, 2016
+"""
+from __future__ import absolute_import
+
+import yaml
+import os
+import argparse
+
+from collections import Counter
+from datetime import datetime, timedelta
+from jinja2 import Template
+
+from namesgenerator import *
+
+_DATA = "data"
+_DATA_PATH = os.path.join(os.getcwd(), 'data')
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Generate pages for consumption by pelican static "
+        "website generator.")
+
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        "--teams", action="store_true",
+        help="Generate page for rosters from data/teams.yaml and "
+        "data/season.yaml")
+    group.add_argument(
+        "--schedule", action="store_true",
+        help="Generate full season of schedules from data/teams.yaml "
+        "and data/season.yaml")
+    group.add_argument(
+        "--standings", action="store_true",
+        help="Generate page for standings using generated schedules and"
+        " teams.yaml")
+
+    return parser.parse_args()
+
+
+def read_yaml(path):
+    teams = yaml.load(open(os.path.join(_DATA_PATH, path)).read())
+    return teams
+
+
+def write_yaml(path, data):
+    with open(os.path.join(_DATA_PATH, path), 'w') as yamlr:
+        yamlr.writelines(yaml.dump(data))
+
+
+def get_template(name):
+    return Template(open(os.path.join(_DATA_PATH, name)).read())
+
+
+def create_schedule(list, games_per_season):
+    """ Create a schedule for the teams in the list and return it"""
+    s = []
+
+    if len(list) % 2:
+        list = list + [{'name:' + get_random_name(),
+                        'captain:' + get_random_name()}]
+
+    counter = 0
+    while(len(s) != games_per_season):
+        mid = len(list) / 2
+        l1 = list[:mid]
+        l2 = list[mid:]
+        l2.reverse()
+
+        last_go = len(s) + mid > games_per_season
+
+        if last_go:
+            left_over = (len(s) + mid) - games_per_season
+            s.extend(zip(l1, l2)[:left_over])
+            return s
+        # Switch sides after each round
+        if(counter % 2 == 1):
+            s.extend(zip(l1, l2))
+        else:
+            s.extend(zip(l2, l1))
+
+        list.insert(1, list.pop())
+        counter += 1
+
+    return s
+
+
+def generate_schedule():
+    season = read_yaml('season.yaml')
+    times = season['times']
+    games_per_season = (season['games_per_court'] *
+                        season['courts_per_night'] *
+                        season['nights_per_season'])
+    game_nights = []
+    for division in read_yaml('teams.yaml'):
+        game_night = None
+        for idx, round in enumerate(create_schedule(division['teams'],
+                                    games_per_season)):
+            if not game_night:
+                night = (idx / len(times)) + 1
+                game_night = {'division': division['division'],
+                              'night': night, 'games': []}
+
+            game_night['games'] += [{'court': division['courts'][0],
+                                     'time': times[idx % len(times)],
+                                     'home': round[0]['name'],
+                                     'away': round[1]['name']}]
+            division['courts'].reverse()
+
+            if len(game_night['games']) == len(times):
+                game_nights.extend([game_night])
+                game_night = None
+
+    testing = {}
+    for game_night in game_nights:
+        if game_night['night'] not in testing:
+            testing[game_night['night']] = []
+        testing[game_night['night']].extend([game_night])
+
+    season_dir = os.path.join(os.getcwd(), 'content',
+                              "%s-%d" % (season['season'], season['year']))
+    if not os.path.exists(season_dir):
+        os.makedirs(season_dir)
+
+    start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
+
+    for key, night in testing.iteritems():
+        template = get_template('night.templ')
+        night_md = os.path.join(season_dir, "night-%02d.md" % key)
+
+        if os.path.exists(night_md):
+            continue
+
+        with open(night_md, 'w') as night_file:
+            night_file.write(template.render(year=season['year'],
+                                             night="%02d" % key,
+                                             season=season['season'],
+                                             divisions=night,
+                                             date=(start_date - timedelta(days=6)).
+                                             isoformat(),
+                                             game_date=start_date.isoformat()))
+
+        start_date += timedelta(days=7)
+
+
+def generate_teams():
+    season = read_yaml('season.yaml')
+    teams = read_yaml('teams.yaml')
+
+    pages_dir = os.path.join(os.getcwd(), 'content', 'rosters')
+    if not os.path.exists(pages_dir):
+        os.makedirs(pages_dir)
+
+    one_week = timedelta(days=7)
+    start_date = (datetime.strptime(season['startdate'], '%Y-%m-%d')
+                  .date() - one_week)
+
+    template = get_template('teams.templ')
+    pages_dir = os.path.join(pages_dir,
+                             "%s-%d-rosters.md" %
+                             (season['season'], season['year']))
+    with open(pages_dir, 'w+') as night_file:
+        night_file.write(template.render(team_list=teams,
+                                         year=season['year'],
+                                         season=season['season'],
+                                         date=start_date))
+
+
+def generate_standings():
+    season = read_yaml('season.yaml')
+    divisions = read_yaml('teams.yaml')
+
+    pages_dir = os.path.join(os.getcwd(), 'content', 'standings')
+    if not os.path.exists(pages_dir):
+        os.makedirs(pages_dir)
+
+    season_dir = os.path.join(os.getcwd(), 'content',
+                              "%s-%d" % (season['season'], season['year']))
+
+    standings = {
+        'winners': [],
+        'losers': [],
+        'ties': []}
+
+    for night_file in os.listdir(season_dir):
+        with open(os.path.join(season_dir, night_file)) as night_md:
+            table_begin = night_md.read().split('<!-- begin table -->')
+
+            night_date = table_begin[0].split("\n")[0].split(" - ")[1]
+            night_date = datetime.strptime(night_date, '%Y-%m-%d').date()
+            if night_date >= datetime.now().date():
+                continue
+
+            for table in table_begin[1:]:
+                for row in table.split('<!-- end table -->')[0].strip().split('\n'):
+                        teams = row.strip(" |").split(" | ")[2:]
+                        team_code = ''.join([team[:1] for team in row.split(" | ")[2:]])
+
+                        if team_code == "**" or "*" not in team_code:
+                            standings['ties'].extend(teams)
+                        elif team_code[0] == "*":
+                            standings['winners'].append(teams[0])
+                            standings['losers'].append(teams[1])
+                        elif team_code[1] == "*":
+                            standings['winners'].append(teams[1])
+                            standings['losers'].append(teams[0])
+
+    standings['ties'] = Counter(standings['ties'])
+    standings['winners'] = Counter(standings['winners'])
+    standings['losers'] = Counter(standings['losers'])
+
+    for division in divisions:
+        for team in division['teams']:
+            team['wins'] = standings['winners'][team['name']]
+            team['losses'] = standings['losers'][team['name']]
+            team['ties'] = standings['ties'][team['name']]
+            team['points'] = team['wins'] * 3 + team['ties']
+
+    template = get_template('standings.templ')
+    pages_dir = os.path.join(pages_dir,
+                             "%s-%d-standings.md" %
+                             (season['season'], season['year']))
+    with open(pages_dir, 'w+') as standing_file:
+        standing_file.write(template.render(team_list=divisions,
+                                            year=season['year'],
+                                            season=season['season'],
+                                            date=season['startdate']))
+
+
+def main():
+    args = parse_args()
+
+    if args.schedule:
+        generate_schedule()
+    elif args.teams:
+        generate_teams()
+    elif args.standings:
+        generate_standings()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,46 @@
+#Copyright (C) Jeremy Breiding, Inc - All Rights Reserved
+#Unauthorized copying of this file, via any medium is strictly prohibited
+#Proprietary and confidential
+#Written by Jeremy Breiding jbreiding@hotmail.com, 2016
+- division: "sharks"
+  courts:
+    - "9"
+    - "10"
+  teams:
+  - captain: "Tripsie Coker"
+    name: "Dat Ace Doe"
+  - captain: "Kevin Lam"
+    name: "Captain Crunch & The Funky Bunch"
+  - captain: "Mark Houston"
+    name: "I'd Hit That"
+  - captain: "Sree Kandula"
+    name: "Make up sets"
+  - captain: "Daniel Sensenderfer"
+    name: "I've Got A Brazilian Problem"
+  - captain: "Rob Lee"
+    name: "Kentucky Fried Volley"
+  - captain: "Abhi Kalavakuntla"
+    name: "Mission Unblockable"
+  - captain: "Matt Langston"
+    name: "Volley Llamas"
+- division: "minnows"
+  courts:
+    - "7"
+    - "8"
+  teams:
+  - captain: "Carlos Bazon"
+    name: "Practice Safe Sets"
+  - captain: "Joe Macrini"
+    name: 2close4missiles
+  - captain: "Lauren La Geese"
+    name: "Ballers on a Budget"
+  - captain: "Rick Lozano"
+    name: Sandsational
+  - captain: "Chris Bartels"
+    name: "Chicken Sammiches"
+  - captain: "Matt Shover"
+    name: "The Volleyball Locker Room Scene From Top Gun"
+  - captain: "Prudhvi Bonda"
+    name: "Hoof Hearted"
+  - captain: "Esther Gil"
+    name: "Sets on the Beach"
