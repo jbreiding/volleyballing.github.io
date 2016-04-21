@@ -13,12 +13,12 @@ sharks
 | Time | Court | Home | Away |
 | ---- | ----- | ---- | ---- |
 <!-- begin table -->
-| 7:00 | 9 | Volley Llamas | Dat Ace Doe |
+| 7:00 | 9 | **Volley Llamas** | Dat Ace Doe |
 | 7:00 | 10 | Mission Unblockable | Captain Crunch & The Funky Bunch |
-| 7:40 | 9 | Kentucky Fried Volley | I'd Hit That |
+| 7:40 | 9 | Kentucky Fried Volley | **I'd Hit That** |
 | 7:40 | 10 | I've Got A Brazilian Problem | Make up sets |
 | 8:20 | 9 | Dat Ace Doe | Mission Unblockable |
-| 8:20 | 10 | Volley Llamas | Kentucky Fried Volley |
+| 8:20 | 10 | **Volley Llamas** | Kentucky Fried Volley |
 | 9:00 | 9 | Captain Crunch & The Funky Bunch | I've Got A Brazilian Problem |
 | 9:00 | 10 | I'd Hit That | Make up sets |
 <!-- end table -->

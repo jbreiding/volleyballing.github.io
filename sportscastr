@@ -96,7 +96,7 @@ def generate_schedule():
     games_per_season = (season['games_per_court'] *
                         season['courts_per_night'] *
                         season['nights_per_season'])
-    game_nights = []
+    game_nights = {}
     for division in read_yaml('teams.yaml'):
         game_night = None
         for idx, round in enumerate(create_schedule(division['teams'],
@@ -113,14 +113,11 @@ def generate_schedule():
             division['courts'].reverse()
 
             if len(game_night['games']) == len(times):
-                game_nights.extend([game_night])
-                game_night = None
+                if game_night['night'] not in game_nights:
+                    game_nights[game_night['night']] = []
 
-    testing = {}
-    for game_night in game_nights:
-        if game_night['night'] not in testing:
-            testing[game_night['night']] = []
-        testing[game_night['night']].extend([game_night])
+                game_nights[game_night['night']].extend([game_night])
+                game_night = None
 
     season_dir = os.path.join(os.getcwd(), 'content',
                               "%s-%d" % (season['season'], season['year']))
@@ -129,7 +126,7 @@ def generate_schedule():
 
     start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
 
-    for key, night in testing.iteritems():
+    for key, night in game_nights.iteritems():
         template = get_template('night.templ')
         night_md = os.path.join(season_dir, "night-%02d.md" % key)
 
@@ -141,7 +138,8 @@ def generate_schedule():
                                              night="%02d" % key,
                                              season=season['season'],
                                              divisions=night,
-                                             date=(start_date - timedelta(days=6)).
+                                             date=(start_date -
+                                                   timedelta(days=6)).
                                              isoformat(),
                                              game_date=start_date.isoformat()))
 
@@ -183,13 +181,15 @@ def generate_standings():
                               "%s-%d" % (season['season'], season['year']))
 
     standings = {
-        'winners': [],
-        'losers': [],
-        'ties': []}
+        'winners': Counter(),
+        'losers': Counter(),
+        'ties': Counter()}
 
+    begin_table = '<!-- begin table -->'
+    end_table = '<!-- end table -->'
     for night_file in os.listdir(season_dir):
         with open(os.path.join(season_dir, night_file)) as night_md:
-            table_begin = night_md.read().split('<!-- begin table -->')
+            table_begin = night_md.read().split(begin_table)
 
             night_date = table_begin[0].split("\n")[0].split(" - ")[1]
             night_date = datetime.strptime(night_date, '%Y-%m-%d').date()
@@ -197,23 +197,23 @@ def generate_standings():
                 continue
 
             for table in table_begin[1:]:
-                for row in table.split('<!-- end table -->')[0].strip().split('\n'):
-                        teams = row.strip(" |").split(" | ")[2:]
-                        team_code = ''.join([team[:1] for team in row.split(" | ")[2:]])
+                for row in table.split(end_table)[0].strip().split('\n'):
+                        teams = [team.strip('*') for team in
+                                 row.strip(" |").strip('*').split(" | ")[2:]]
+                        team_code = ''.join([team[:1] for team in
+                                            row.split(" | ")[2:]])
 
                         if team_code == "**" or "*" not in team_code:
-                            standings['ties'].extend(teams)
+                            standings['ties'].update(teams)
                         elif team_code[0] == "*":
-                            standings['winners'].append(teams[0])
-                            standings['losers'].append(teams[1])
+                            standings['winners'].update([teams[0]])
+                            standings['losers'].update([teams[1]])
                         elif team_code[1] == "*":
-                            standings['winners'].append(teams[1])
-                            standings['losers'].append(teams[0])
-
-    standings['ties'] = Counter(standings['ties'])
-    standings['winners'] = Counter(standings['winners'])
-    standings['losers'] = Counter(standings['losers'])
-
+                            standings['winners'].update([teams[1]])
+                            standings['losers'].update([teams[0]])
+                        else:
+                            print teams
+    sorted_divisions = []
     for division in divisions:
         for team in division['teams']:
             team['wins'] = standings['winners'][team['name']]
@@ -221,15 +221,39 @@ def generate_standings():
             team['ties'] = standings['ties'][team['name']]
             team['points'] = team['wins'] * 3 + team['ties']
 
+        division['teams'] = sorted(division['teams'],
+                                   key=lambda team: team['points'],
+                                   reverse=True)
+        sorted_divisions.append(division)
+
     template = get_template('standings.templ')
     pages_dir = os.path.join(pages_dir,
                              "%s-%d-standings.md" %
                              (season['season'], season['year']))
     with open(pages_dir, 'w+') as standing_file:
-        standing_file.write(template.render(team_list=divisions,
+        standing_file.write(template.render(team_list=sorted_divisions,
                                             year=season['year'],
                                             season=season['season'],
                                             date=season['startdate']))
+
+
+def generate_playoffs():
+    def divide(arr, depth, m):
+        if len(complements) <= depth:
+            complements.append(2 ** (depth + 2) + 1)
+        complement = complements[depth]
+        for i in range(2):
+            if complement - arr[i] <= m:
+                arr[i] = [arr[i], complement - arr[i]]
+                divide(arr[i], depth + 1, m)
+
+    m = 8
+
+    arr = [1, 2]
+    complements = []
+
+    divide(arr, 0, m)
+    print arr
 
 
 def main():
