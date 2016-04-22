@@ -17,9 +17,6 @@ from jinja2 import Template
 
 from namesgenerator import *
 
-_DATA = "data"
-_DATA_PATH = os.path.join(os.getcwd(), 'data')
-
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -199,7 +196,7 @@ def generate_standings():
             for table in table_begin[1:]:
                 for row in table.split(end_table)[0].strip().split('\n'):
                         teams = [team.strip('*') for team in
-                                 row.strip(" |").strip('*').split(" | ")[2:]]
+                                 row.strip(" |").split(" | ")[2:]]
                         team_code = ''.join([team[:1] for team in
                                             row.split(" | ")[2:]])
 
