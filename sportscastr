@@ -6,6 +6,7 @@ Proprietary and confidential
 Written by Jeremy Breiding jbreiding@hotmail.com, 2016
 """
 from __future__ import absolute_import
+from namesgenerator import *
 
 import yaml
 import os
@@ -14,8 +15,6 @@ import argparse
 from collections import Counter
 from datetime import datetime, timedelta
 from jinja2 import Template
-
-from namesgenerator import *
 
 
 def parse_args():
@@ -41,17 +40,17 @@ def parse_args():
 
 
 def read_yaml(path):
-    teams = yaml.load(open(os.path.join(_DATA_PATH, path)).read())
+    teams = yaml.load(open(os.path.join("data", path)).read())
     return teams
 
 
 def write_yaml(path, data):
-    with open(os.path.join(_DATA_PATH, path), 'w') as yamlr:
+    with open(os.path.join("data", path), 'w') as yamlr:
         yamlr.writelines(yaml.dump(data))
 
 
 def get_template(name):
-    return Template(open(os.path.join(_DATA_PATH, name)).read())
+    return Template(open(os.path.join("data", name)).read())
 
 
 def create_schedule(list, games_per_season):
@@ -59,8 +58,8 @@ def create_schedule(list, games_per_season):
     s = []
 
     if len(list) % 2:
-        list = list + [{'name:' + get_random_name(),
-                        'captain:' + get_random_name()}]
+        list.append({'name': get_random_name(),
+                    'captain': get_random_name()})
 
     counter = 0
     while(len(s) != games_per_season):

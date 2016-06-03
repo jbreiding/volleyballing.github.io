@@ -1,35 +1,34 @@
-Title: spring 2016 Teams
-Date: 2016-03-16
-Tags: 2016, spring
+Title: summer 2016 Teams
+Date: 2016-06-01
+Tags: 2016, summer
 Category: rosters
-Summary: spring 2016 Teams
+Summary: summer 2016 Teams
 
 sharks
 =====
 | Team Name | Captain |
 | ---- ---- | ------- |
 | Dat Ace Doe | Tripsie Coker |
-| Captain Crunch & The Funky Bunch | Kevin Lam |
 | I'd Hit That | Mark Houston |
-| Make up sets | Sree Kandula |
+| Make up sets | Jeannie Harrington |
 | I've Got A Brazilian Problem | Daniel Sensenderfer |
 | Kentucky Fried Volley | Rob Lee |
-| Mission Unblockable | Abhi Kalavakuntla |
-| Volley Llamas | Matt Langston |
+| Serves You Right | Joe Macrini |
+| Paper Wicket Butterflies | Alex Ortiz |
 
 
 minnows
 =====
 | Team Name | Captain |
 | ---- ---- | ------- |
-| Practice Safe Sets | Carlos Bazon |
-| 2close4missiles | Joe Macrini |
+| Settin Sideways | Will Martinez |
+| Sand Snake | Jason Vick |
 | Ballers on a Budget | Lauren La Geese |
 | Sandsational | Rick Lozano |
-| Chicken Sammiches | Chris Bartels |
-| The Volleyball Locker Room Scene From Top Gun | Matt Shover |
-| Hoof Hearted | Prudhvi Bonda |
-| Sets on the Beach | Esther Gil |
+| Marco | Chris Bartels |
+| Throwbacks | Phil Sprofera |
+| Emotional Puck Doctors | Joey Davis |
+| Fumbling Axe Killers | Joanne Mylacraine |
 
 
 

@@ -63,6 +63,7 @@ help:
 	@echo '   make github                         upload the web site via gh-pages   '
 	@echo '   make teams                          generate the roster page after updating yamls'
 	@echo '   make schedule                       generate the schedule for the season'
+	@echo '   make standings                      update the standings for the season'
 	@echo '   make update_source [MSG=]           upload the source to github branch '
 	@echo '                                                                          '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
@@ -150,4 +151,4 @@ endif
 	git push origin $(GITHUB_SOURCE_BRANCH)
 
 
-.PHONY: update_source html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github teams schedules
+.PHONY: standings update_source html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github teams schedules

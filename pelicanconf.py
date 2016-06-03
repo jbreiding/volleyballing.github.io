@@ -19,23 +19,24 @@ CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-#ARTICLE_ORDER_BY = 'basename'
+# ARTICLE_ORDER_BY = 'basename'
 THEME = 'themes/pelican-bootstrap3'
 # Blogroll
 LINKS = []
 TYPOGRIFY = True
 # Social widget
-SOCIAL = [('github', 'https://github.com/volleyballing/volleyballing.github.io')]
+SOCIAL = [('github',
+           'https://github.com/volleyballing/volleyballing.github.io')]
 DISQUS_SITENAME = 'volleyballing'
 DEFAULT_PAGINATION = False
-#CSS_FILE = "wide.css"
+# CSS_FILE = "wide.css"
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 WITH_FUTURE_DATES = False
 DEFAULT_DATE = 'fs'
 MAIN_MENU = True
 MENUITEMS = ()
-GITHUB_URL='https://github.com/volleyballing/volleyballing.github.io'
+GITHUB_URL = 'https://github.com/volleyballing/volleyballing.github.io'
 STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
@@ -45,5 +46,5 @@ BOOTSTRAP_THEME = 'flatly'
 ABOUT_ME = 'Just a racker ballin...'
 AVATAR = '/images/emblemmatic-racker-volleyball-league-logo-804.svg'
 
-PLUGIN_PATHS = ["plugins",]
-PLUGINS = ['series','md-metayaml']
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ['series', 'md-metayaml']
