@@ -47,4 +47,4 @@ ABOUT_ME = 'Just a racker ballin...'
 AVATAR = '/images/emblemmatic-racker-volleyball-league-logo-804.svg'
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ['series', 'md-metayaml']
+PLUGINS = ['series', 'md-metayaml', 'bootstrapify']

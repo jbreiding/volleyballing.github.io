@@ -16,11 +16,10 @@ Summary: {{ year }} {{ season }} Night {{ night }} - {{ game_date }}
 {% for division in divisions %}{{ division.division }}
 =====
 | Time | Court | Home | Away |
-| ---- | ----- | ---- | ---- |
-<!-- begin table -->
+| ---- | ----- | ---- | ---- | <!-- begin table -->
 {% for game in division.games %}| {{ game.time }} | {{ game.court }} | {{ game.home }} | {{ game.away }} |
-{% endfor %}<!-- end table -->
-
+{% endfor %}
+<!-- end table -->
 {% endfor %}
 
 {% endblock %}

@@ -11,23 +11,21 @@ Summary: 2016 summer Night 05 - 2016-07-06
 sharks
 =====
 | Time | Court | Home | Away |
-| ---- | ----- | ---- | ---- |
-<!-- begin table -->
+| ---- | ----- | ---- | ---- | <!-- begin table -->
 | 7:00 | 9 | Paper Wicket Butterflies | Dat Ace Doe |
-| 7:00 | 10 | Serves You Right | prickly_feynman |
+| 7:00 | 10 | Serves You Right | stoic_brattain |
 | 7:40 | 9 | Kentucky Fried Volley | I'd Hit That |
 | 7:40 | 10 | I've Got A Brazilian Problem | Make up sets |
 | 8:20 | 9 | Dat Ace Doe | Serves You Right |
 | 8:20 | 10 | Paper Wicket Butterflies | Kentucky Fried Volley |
-| 9:00 | 9 | prickly_feynman | I've Got A Brazilian Problem |
+| 9:00 | 9 | stoic_brattain | I've Got A Brazilian Problem |
 | 9:00 | 10 | I'd Hit That | Make up sets |
-<!-- end table -->
 
+<!-- end table -->
 minnows
 =====
 | Time | Court | Home | Away |
-| ---- | ----- | ---- | ---- |
-<!-- begin table -->
+| ---- | ----- | ---- | ---- | <!-- begin table -->
 | 7:00 | 7 | Emotional Puck Doctors | Settin Sideways |
 | 7:00 | 8 | Throwbacks | Fumbling Axe Killers |
 | 7:40 | 7 | Marco | Sand Snake |
@@ -36,8 +34,8 @@ minnows
 | 8:20 | 8 | Emotional Puck Doctors | Marco |
 | 9:00 | 7 | Fumbling Axe Killers | Sandsational |
 | 9:00 | 8 | Sand Snake | Ballers on a Budget |
-<!-- end table -->
 
+<!-- end table -->
 
 
 
