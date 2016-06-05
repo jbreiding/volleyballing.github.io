@@ -57,9 +57,9 @@ def create_schedule(list, games_per_season):
     """ Create a schedule for the teams in the list and return it"""
     s = []
 
-    if len(list) % 2:
-        list.append({'name': get_random_name(),
-                    'captain': get_random_name()})
+    # if len(list) % 2:
+    #     list.append({'name': get_random_name(),
+    #                 'captain': get_random_name()})
 
     counter = 0
     while(len(s) != games_per_season):

@@ -8,20 +8,6 @@ Summary: 2016 summer Night 10 - 2016-08-10
 
 > Winners are shown in **bold** after the match is completed.
 
-sharks
-=====
-| Time | Court | Home | Away |
-| ---- | ----- | ---- | ---- | <!-- begin table -->
-| 7:00 | 9 | I've Got A Brazilian Problem | Dat Ace Doe |
-| 7:00 | 10 | Make up sets | Kentucky Fried Volley |
-| 7:40 | 9 | I'd Hit That | Serves You Right |
-| 7:40 | 10 | stoic_brattain | Paper Wicket Butterflies |
-| 8:20 | 9 | Dat Ace Doe | Make up sets |
-| 8:20 | 10 | I've Got A Brazilian Problem | I'd Hit That |
-| 9:00 | 9 | Kentucky Fried Volley | stoic_brattain |
-| 9:00 | 10 | Serves You Right | Paper Wicket Butterflies |
-
-<!-- end table -->
 minnows
 =====
 | Time | Court | Home | Away |

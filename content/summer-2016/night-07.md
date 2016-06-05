@@ -14,12 +14,12 @@ sharks
 | ---- | ----- | ---- | ---- | <!-- begin table -->
 | 7:00 | 9 | Make up sets | Dat Ace Doe |
 | 7:00 | 10 | I'd Hit That | I've Got A Brazilian Problem |
-| 7:40 | 9 | stoic_brattain | Kentucky Fried Volley |
-| 7:40 | 10 | Paper Wicket Butterflies | Serves You Right |
-| 8:20 | 9 | Dat Ace Doe | I'd Hit That |
-| 8:20 | 10 | Make up sets | stoic_brattain |
-| 9:00 | 9 | I've Got A Brazilian Problem | Paper Wicket Butterflies |
-| 9:00 | 10 | Kentucky Fried Volley | Serves You Right |
+| 7:40 | 9 | Sets on the Beach | Kentucky Fried Volley |
+| 7:40 | 10 | Dat Ace Doe | I'd Hit That |
+| 8:20 | 9 | Make up sets | Sets on the Beach |
+| 8:20 | 10 | I've Got A Brazilian Problem | Serves You Right |
+| 9:00 | 9 | Sets on the Beach | Dat Ace Doe |
+| 9:00 | 10 | Serves You Right | I'd Hit That |
 
 <!-- end table -->
 minnows
