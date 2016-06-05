@@ -57,10 +57,7 @@ def create_schedule(list, games_per_season):
     """ Create a schedule for the teams in the list and return it"""
     s = []
 
-    # if len(list) % 2:
-    #     list.append({'name': get_random_name(),
-    #                 'captain': get_random_name()})
-
+    print len(list)
     counter = 0
     while(len(s) != games_per_season):
         mid = len(list) / 2
@@ -68,10 +65,13 @@ def create_schedule(list, games_per_season):
         l2 = list[mid:]
         l2.reverse()
 
-        last_go = len(s) + mid > games_per_season
+        if (len(list) % 2) != 0:
+            l2.pop()
+
+        last_go = (len(s) + len(l1)) > games_per_season
 
         if last_go:
-            left_over = (len(s) + mid) - games_per_season
+            left_over = (len(s) + len(l1)) - games_per_season + 1
             s.extend(zip(l1, l2)[:left_over])
             return s
         # Switch sides after each round

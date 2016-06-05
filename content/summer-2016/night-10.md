@@ -8,6 +8,20 @@ Summary: 2016 summer Night 10 - 2016-08-10
 
 > Winners are shown in **bold** after the match is completed.
 
+sharks
+=====
+| Time | Court | Home | Away |
+| ---- | ----- | ---- | ---- | <!-- begin table -->
+| 7:00 | 9 | Sets on the Beach | Dat Ace Doe |
+| 7:00 | 10 | Serves You Right | I'd Hit That |
+| 7:40 | 9 | Kentucky Fried Volley | Make up sets |
+| 7:40 | 10 | Dat Ace Doe | Serves You Right |
+| 8:20 | 9 | Sets on the Beach | Kentucky Fried Volley |
+| 8:20 | 10 | I'd Hit That | I've Got A Brazilian Problem |
+| 9:00 | 9 | Dat Ace Doe | Kentucky Fried Volley |
+| 9:00 | 10 | Serves You Right | I've Got A Brazilian Problem |
+
+<!-- end table -->
 minnows
 =====
 | Time | Court | Home | Away |
