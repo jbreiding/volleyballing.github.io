@@ -12,28 +12,28 @@ sharks
 =====
 | Time | Court | Home | Away |
 | ---- | ----- | ---- | ---- | <!-- begin table -->
-| 7:00 | 9 | Xmus Jaxon Flaxon-Waxon | Dat Ace Doe |
-| 7:00 | 10 | Sets on the Beach | I'd Hit That |
-| 7:40 | 9 | Serves You Right | Make up sets |
-| 7:40 | 10 | Kentucky Fried Volley | I've Got A Brazilian Problem |
-| 8:20 | 9 | Dat Ace Doe | Sets on the Beach |
-| 8:20 | 10 | Xmus Jaxon Flaxon-Waxon | Serves You Right |
-| 9:00 | 9 | I'd Hit That | Kentucky Fried Volley |
-| 9:00 | 10 | Make up sets | I've Got A Brazilian Problem |
+| 7:00 | 9 | I've Got A Brazilian Problem | Sets on the Beach |
+| 7:00 | 10 | Dat Ace Doe | Make up sets |
+| 7:40 | 9 | Sets on the Beach | Make up sets |
+| 7:40 | 10 | Dat Ace Doe | I've Got A Brazilian Problem |
+| 8:20 | 9 | Kentucky Fried Volley | Serves You Right |
+| 8:20 | 10 | I'd Hit That | Xmus Jaxon Flaxon-Waxon |
+| 9:00 | 9 | Kentucky Fried Volley | I'd Hit That |
+| 9:00 | 10 | Xmus Jaxon Flaxon-Waxon | Serves You Right |
 
 <!-- end table -->
 minnows
 =====
 | Time | Court | Home | Away |
 | ---- | ----- | ---- | ---- | <!-- begin table -->
-| 7:00 | 7 | Fumbling Axe Killers | Settin Sideways |
-| 7:00 | 8 | Emotional Puck Doctors | Sand Snake |
-| 7:40 | 7 | Throwbacks | Ballers on a Budget |
-| 7:40 | 8 | Marco | Sandsational |
-| 8:20 | 7 | Settin Sideways | Emotional Puck Doctors |
+| 7:00 | 7 | Marco | Throwbacks |
+| 7:00 | 8 | Sand Snake | Fumbling Axe Killers |
+| 7:40 | 7 | Sandsational | Emotional Puck Doctors |
+| 7:40 | 8 | Settin Sideways | Ballers on a Budget |
+| 8:20 | 7 | Marco | Sand Snake |
 | 8:20 | 8 | Fumbling Axe Killers | Throwbacks |
-| 9:00 | 7 | Sand Snake | Marco |
-| 9:00 | 8 | Ballers on a Budget | Sandsational |
+| 9:00 | 7 | Emotional Puck Doctors | Ballers on a Budget |
+| 9:00 | 8 | Settin Sideways | Sandsational |
 
 <!-- end table -->
 
