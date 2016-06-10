@@ -28,8 +28,8 @@ minnows
 | Sandsational | Rick Lozano |
 | Marco | Chris Bartels |
 | Throwbacks | Phil Sprofera |
-| Emotional Puck Doctors | Joey Davis |
-| Fumbling Axe Killers | Joanne Mylacraine |
+| Rough Sets | Joey Davis |
+| The Hitmen | Joanne Mylacraine |
 
 
 

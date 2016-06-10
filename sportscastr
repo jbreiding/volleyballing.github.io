@@ -214,7 +214,7 @@ def generate_standings():
             team['wins'] = standings['winners'][team['name']]
             team['losses'] = standings['losers'][team['name']]
             team['ties'] = standings['ties'][team['name']]
-            team['points'] = team['wins'] * 3 + team['ties']
+            team['points'] = team['wins'] * 2 + team['ties']
 
         division['teams'] = sorted(division['teams'],
                                    key=lambda team: team['points'],

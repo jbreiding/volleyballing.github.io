@@ -29,11 +29,11 @@ minnows
 | 7:00 | 7 | Sandsational | Settin Sideways |
 | 7:00 | 8 | Ballers on a Budget | Marco |
 | 7:40 | 7 | Sand Snake | Throwbacks |
-| 7:40 | 8 | Fumbling Axe Killers | Emotional Puck Doctors |
+| 7:40 | 8 | The Hitmen | Rough Sets |
 | 8:20 | 7 | Settin Sideways | Ballers on a Budget |
 | 8:20 | 8 | Sandsational | Sand Snake |
-| 9:00 | 7 | Marco | Fumbling Axe Killers |
-| 9:00 | 8 | Throwbacks | Emotional Puck Doctors |
+| 9:00 | 7 | Marco | The Hitmen |
+| 9:00 | 8 | Throwbacks | Rough Sets |
 
 <!-- end table -->
 
