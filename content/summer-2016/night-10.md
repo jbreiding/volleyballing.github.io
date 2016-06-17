@@ -1,10 +1,10 @@
-Title: 2016 summer Night 10 - 2016-08-10
+Title: 2016 summer Night 10 - 2016-08-17
 Slug: 2016-summer-10
-Date: 2016-08-04
+Date: 2016-08-09
 Tags: 2016, summer
 Category: summer-2016
 Series: summer-2016
-Summary: 2016 summer Night 10 - 2016-08-10
+Summary: 2016 summer Night 10 - 2016-08-17
 
 > Winners are shown in **bold** after the match is completed.
 
