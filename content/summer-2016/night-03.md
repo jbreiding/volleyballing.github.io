@@ -17,7 +17,7 @@ sharks
 | 7:40 | 9 | I'd Hit That | **Serves You Right** |
 | 7:40 | 10 | **Xmus Jaxon Flaxon-Waxon** | Sets on the Beach |
 | 8:20 | 9 | **Dat Ace Doe** | Make up sets |
-| 8:20 | 10 | I've Got A Brazilian **Problem | I'd Hit That** |
+| 8:20 | 10 | I've Got A Brazilian Problem | **I'd Hit That** |
 | 9:00 | 9 | Kentucky Fried Volley | **Xmus Jaxon Flaxon-Waxon** |
 | 9:00 | 10 | Serves You Right | **Sets on the Beach** |
 

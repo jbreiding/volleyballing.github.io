@@ -8,10 +8,10 @@ sharks
 =====
 | Team Name | Captain | Wins | Loss | Tie | Points |
 | --- | --- | --- | --- | --- | --- |
-| Serves You Right | Joe Macrini | 4 | 2 | 0 | 8 |
+| I'd Hit That | Mark Houston | 4 | 2 | 0 | 8 |
+  | Serves You Right | Joe Macrini | 4 | 2 | 0 | 8 |
   | Xmus Jaxon Flaxon-Waxon | Eric Barrientez | 4 | 2 | 0 | 8 |
-  | I'd Hit That | Mark Houston | 3 | 2 | 1 | 7 |
-  | I've Got A Brazilian Problem | Daniel Sensenderfer | 3 | 1 | 1 | 7 |
+  | I've Got A Brazilian Problem | Daniel Sensenderfer | 3 | 2 | 1 | 7 |
   | Make up sets | Jeannie Harrington | 3 | 3 | 0 | 6 |
   | Kentucky Fried Volley | Rob Lee | 3 | 3 | 0 | 6 |
   | Dat Ace Doe | Tripsie Coker | 1 | 4 | 1 | 3 |
