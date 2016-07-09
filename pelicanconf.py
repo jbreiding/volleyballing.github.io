@@ -32,7 +32,7 @@ DEFAULT_PAGINATION = False
 # CSS_FILE = "wide.css"
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
-WITH_FUTURE_DATES = False
+WITH_FUTURE_DATES = True
 DEFAULT_DATE = 'fs'
 MAIN_MENU = True
 MENUITEMS = ()

@@ -29,11 +29,11 @@ minnows
 | 7:00 | 7 | Throwbacks | Settin Sideways |
 | 7:00 | 8 | Marco | Rough Sets |
 | 7:40 | 7 | Sandsational | The Hitmen |
-| 7:40 | 8 | Ballers on a Budget | Sand Snake |
+| 7:40 | 8 | Ballers on a Budget | Throwbacks |
 | 8:20 | 7 | Settin Sideways | Marco |
 | 8:20 | 8 | Throwbacks | Sandsational |
 | 9:00 | 7 | Rough Sets | Ballers on a Budget |
-| 9:00 | 8 | The Hitmen | Sand Snake |
+| 9:00 | 8 | The Hitmen | Marco |
 
 <!-- end table -->
 
