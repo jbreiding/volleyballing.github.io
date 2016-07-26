@@ -8,28 +8,28 @@ sharks
 =====
 | Team Name | Captain | Wins | Loss | Tie | Points |
 | --- | --- | --- | --- | --- | --- |
-| I'd Hit That | Mark Houston | 8 | 2 | 0 | 16 |
-  | Xmus Jaxon Flaxon-Waxon | Eric Barrientez | 8 | 2 | 0 | 16 |
-  | Serves You Right | Joe Macrini | 6 | 3 | 1 | 13 |
-  | I've Got A Brazilian Problem | Daniel Sensenderfer | 4 | 3 | 3 | 11 |
-  | Kentucky Fried Volley | Rob Lee | 4 | 5 | 1 | 9 |
+| Xmus Jaxon Flaxon-Waxon | Eric Barrientez | 11 | 2 | 0 | 22 |
+  | I'd Hit That | Mark Houston | 9 | 4 | 0 | 18 |
+  | Serves You Right | Joe Macrini | 8 | 3 | 1 | 17 |
+  | I've Got A Brazilian Problem | Daniel Sensenderfer | 4 | 5 | 3 | 11 |
+  | Kentucky Fried Volley | Rob Lee | 4 | 7 | 1 | 9 |
+  | Make up sets | Jeannie Harrington | 4 | 7 | 0 | 8 |
   | Dat Ace Doe | Tripsie Coker | 2 | 6 | 2 | 6 |
-  | Make up sets | Jeannie Harrington | 3 | 7 | 0 | 6 |
-  | Sets on the Beach | Alex Ortiz | 1 | 8 | 1 | 3 |
+  | Sets on the Beach | Alex Ortiz | 1 | 9 | 2 | 4 |
   
 
 minnows
 =====
 | Team Name | Captain | Wins | Loss | Tie | Points |
 | --- | --- | --- | --- | --- | --- |
-| Ballers on a Budget | Lauren La Geese | 6 | 2 | 2 | 14 |
-  | Sandsational | Rick Lozano | 7 | 3 | 0 | 14 |
-  | Settin Sideways | Will Martinez | 6 | 3 | 1 | 13 |
-  | Throwbacks | Phil Sprofera | 5 | 3 | 2 | 12 |
-  | The Hitmen | Joanne Mylacraine | 4 | 5 | 1 | 9 |
+| Settin Sideways | Will Martinez | 9 | 3 | 1 | 19 |
+  | Ballers on a Budget | Lauren La Geese | 8 | 2 | 2 | 18 |
+  | Sandsational | Rick Lozano | 7 | 5 | 0 | 14 |
+  | Throwbacks | Phil Sprofera | 6 | 4 | 2 | 14 |
+  | The Hitmen | Joanne Mylacraine | 5 | 6 | 1 | 11 |
+  | Marco | Chris Bartels | 5 | 8 | 0 | 10 |
   | Sand Snake | Jason Vick | 4 | 6 | 0 | 8 |
-  | Marco | Chris Bartels | 4 | 6 | 0 | 8 |
-  | Rough Sets | Joey Davis | 1 | 9 | 0 | 2 |
+  | Rough Sets | Joey Davis | 1 | 11 | 0 | 2 |
   
 
 
