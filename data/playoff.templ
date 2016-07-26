@@ -1,0 +1,26 @@
+{#
+Copyright (C) Jeremy Breiding, Inc - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Jeremy Breiding jbreiding@hotmail.com, 2016
+#}{% block body %}Title: {{ year }} {{ season }} Playoffs - {{ game_date }}
+Slug: {{ year }}-{{ season }}-playoffs
+Status: draft
+Date: {{ date }}
+Tags: {{ year }}, {{ season }}
+Category: playoffs
+Summary: {{ year }} {{ season }} Playoffs - {{ game_date }}
+
+> Winners are shown in **bold** after the match is completed.
+
+{% for division in divisions %}{{ division.division }}
+=====
+| Time | Court | Home | Away |
+| ---- | ----- | ---- | ---- | <!-- begin table -->
+{% for game in division.games %}| {{ game.time }} | {{ game.court }} | {{ game.home }} | {{ game.away }} |
+{% endfor %}
+<!-- end table -->
+{% endfor %}
+
+{% endblock %}
+---

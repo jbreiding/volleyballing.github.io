@@ -90,7 +90,7 @@ def generate_schedule():
     times = season['times']
     games_per_season = (season['games_per_court'] *
                         season['courts_per_night'] *
-                        season['nights_per_season'])
+                        (season['nights_per_season'] - 1))
     game_nights = {}
     for division in read_yaml('teams.yaml'):
         game_night = None
@@ -135,8 +135,8 @@ def generate_schedule():
                                              divisions=night,
                                              date=(start_date -
                                                    timedelta(days=6)).
-                                             isoformat(),
-                                             game_date=start_date.isoformat()))
+                                             date(),
+                                             game_date=start_date.date()))
 
         start_date += timedelta(days=7)
 
@@ -221,18 +221,43 @@ def generate_standings():
                                    reverse=True)
         sorted_divisions.append(division)
 
-    template = get_template('standings.templ')
-    pages_dir = os.path.join(pages_dir,
+    standings_template = get_template('standings.templ')
+    standings_dir = os.path.join(pages_dir,
                              "%s-%d-standings.md" %
                              (season['season'], season['year']))
-    with open(pages_dir, 'w+') as standing_file:
-        standing_file.write(template.render(team_list=sorted_divisions,
+    with open(standings_dir, 'w+') as standing_file:
+        standing_file.write(standings_template.render(team_list=sorted_divisions,
                                             year=season['year'],
                                             season=season['season'],
-                                            date=season['startdate']))
+                                            date=str(datetime.now().date())))
+
+    playoffs = []
+    for division in sorted_divisions:
+        bracket = {}
+        bracket['division'] = division['division']
+        bracket['games'] = generate_playoffs(division)
+        playoffs.append(bracket)
+
+    playoff_template = get_template('playoff.templ')
+    playoffdir = os.path.join(pages_dir,
+                              "%s-%d-playoffs.md" %
+                              (season['season'], season['year']))
+
+    start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
+
+    with open(playoffdir, 'w+') as playoff_file:
+        playoff_file.write(playoff_template.render(divisions=playoffs,
+                                           year=season['year'],
+                                           season=season['season'],
+                                           date=start_date +
+                                                   timedelta(weeks=(season['nights_per_season'] +
+                                                            season['holiday_weeks'])),
+                                           game_date=start_date +
+                                                   timedelta(weeks=season['nights_per_season'] +
+                                                            season['holiday_weeks'])))
 
 
-def generate_playoffs():
+def generate_playoffs(sorted_division):
     def divide(arr, depth, m):
         if len(complements) <= depth:
             complements.append(2 ** (depth + 2) + 1)
@@ -242,13 +267,33 @@ def generate_playoffs():
                 arr[i] = [arr[i], complement - arr[i]]
                 divide(arr[i], depth + 1, m)
 
-    m = 8
+    m = len(sorted_division['teams'])
 
-    arr = [1, 2]
+    arr = [1,2]
     complements = []
 
     divide(arr, 0, m)
-    print arr
+
+    games = []
+    times = read_yaml('season.yaml')['times']
+    courts = sorted_division['courts']
+
+    for bracket in arr:
+        for match in bracket:
+            games.append((sorted_division['teams'][match[0]-1]['name'],sorted_division['teams'][match[1]-1]['name']))
+
+    for x in xrange(0, len(games), 2):
+        games.append(("Winner of %s" % str(games[x]), "Winner of %s" % str(games[x+1])))
+
+    games.append(("Finals", "Finals"))
+    playoffs = []
+    for idx, game in enumerate(games):
+        playoffs.append({"time":times[idx % len(times)], 
+                        "court": courts[idx % len(courts)],
+                        "home": game[0], 
+                        "away": game[1]})
+
+    return playoffs
 
 
 def main():

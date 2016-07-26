@@ -1,5 +1,5 @@
 Title: summer 2016 Standings
-Date: 2016-06-08
+Date: 2016-07-25
 Tags: 2016, summer
 Category: standings
 Summary: summer 2016 Standings

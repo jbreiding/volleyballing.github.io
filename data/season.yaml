@@ -9,3 +9,5 @@ season: 'summer'
 times: ['7:00', '7:00', '7:40', '7:40', '8:20', '8:20', '9:00', '9:00']
 year: 2016
 startdate: '2016-06-08'
+holiday_weeks: 0
+holiday_nights: []
