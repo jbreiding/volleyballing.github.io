@@ -12,28 +12,28 @@ sharks
 =====
 | Time | Court | Home | Away |
 | ---- | ----- | ---- | ---- | <!-- begin table -->
-| 7:00 | 9 | Make up sets | Dat Ace Doe |
-| 7:00 | 10 | I'd Hit That | I've Got A Brazilian Problem |
-| 7:40 | 9 | Xmus Jaxon Flaxon-Waxon | Kentucky Fried Volley |
-| 7:40 | 10 | Sets on the Beach | Serves You Right |
-| 8:20 | 9 | Dat Ace Doe | I'd Hit That |
-| 8:20 | 10 | Make up sets | Xmus Jaxon Flaxon-Waxon |
-| 9:00 | 9 | I've Got A Brazilian Problem | Sets on the Beach |
-| 9:00 | 10 | Kentucky Fried Volley | Serves You Right |
+| 7:00 | 9 | **Make up sets** | Dat Ace Doe |
+| 7:00 | 10 | **I'd Hit That** | I've Got A Brazilian Problem |
+| 7:40 | 9 | **Xmus Jaxon Flaxon-Waxon** | Kentucky Fried Volley |
+| 7:40 | 10 | Sets on the Beach | **Serves You Right** |
+| 8:20 | 9 | Dat Ace Doe | **I'd Hit That** |
+| 8:20 | 10 | Make up sets | **Xmus Jaxon Flaxon-Waxon** |
+| 9:00 | 9 | **I've Got A Brazilian Problem** | Sets on the Beach |
+| 9:00 | 10 | Kentucky Fried Volley | **Serves You Right** |
 
 <!-- end table -->
 minnows
 =====
 | Time | Court | Home | Away |
 | ---- | ----- | ---- | ---- | <!-- begin table -->
-| 7:00 | 7 | Ballers on a Budget | Settin Sideways |
-| 7:00 | 8 | Sand Snake | Sandsational |
-| 7:40 | 7 | The Hitmen | Marco |
-| 7:40 | 8 | Rough Sets | Throwbacks |
-| 8:20 | 7 | Settin Sideways | Sand Snake |
-| 8:20 | 8 | Ballers on a Budget | The Hitmen |
-| 9:00 | 7 | Sandsational | Rough Sets |
-| 9:00 | 8 | Marco | Throwbacks |
+| 7:00 | 7 | Ballers on a Budget | **Settin Sideways** |
+| 7:00 | 8 | **Sand Snake** | Sandsational |
+| 7:40 | 7 | **The Hitmen** | Marco |
+| 7:40 | 8 | **Rough Sets** | Throwbacks |
+| 8:20 | 7 | **Settin Sideways** | Sand Snake |
+| 8:20 | 8 | Ballers on a Budget | **The Hitmen** |
+| 9:00 | 7 | **Sandsational** | Rough Sets |
+| 9:00 | 8 | Marco | **Throwbacks** |
 
 <!-- end table -->
 
