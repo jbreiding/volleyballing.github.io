@@ -154,9 +154,7 @@ def generate_teams():
                   .date() - one_week)
 
     template = get_template('teams.templ')
-    pages_dir = os.path.join(pages_dir,
-                             "%s-%d-rosters.md" %
-                             (season['season'], season['year']))
+    pages_dir = os.path.join(pages_dir, "%s-%d" % (season['season'], season['year']), "roster.md")
     with open(pages_dir, 'w+') as night_file:
         night_file.write(template.render(team_list=teams,
                                          year=season['year'],
@@ -222,9 +220,7 @@ def generate_standings():
         sorted_divisions.append(division)
 
     standings_template = get_template('standings.templ')
-    standings_dir = os.path.join(pages_dir,
-                             "%s-%d-standings.md" %
-                             (season['season'], season['year']))
+    standings_dir = os.path.join(pages_dir, "%s-%d" % (season['season'], season['year']), "standings.md")
     with open(standings_dir, 'w+') as standing_file:
         standing_file.write(standings_template.render(team_list=sorted_divisions,
                                             year=season['year'],
@@ -239,9 +235,7 @@ def generate_standings():
         playoffs.append(bracket)
 
     playoff_template = get_template('playoff.templ')
-    playoffdir = os.path.join(pages_dir,
-                              "%s-%d-playoffs.md" %
-                              (season['season'], season['year']))
+    playoffdir = os.path.join(pages_dir, "%s-%d" % (season['season'], season['year']), "playoffs.md")
 
     start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
 
