@@ -145,7 +145,7 @@ def generate_teams():
     season = read_yaml('season.yaml')
     teams = read_yaml('teams.yaml')
 
-    pages_dir = os.path.join(os.getcwd(), 'content', 'rosters')
+    pages_dir = os.path.join(os.getcwd(), 'content', "%s-%d" % (season['season'], season['year']))
     if not os.path.exists(pages_dir):
         os.makedirs(pages_dir)
 
@@ -154,7 +154,7 @@ def generate_teams():
                   .date() - one_week)
 
     template = get_template('teams.templ')
-    pages_dir = os.path.join(pages_dir, "%s-%d" % (season['season'], season['year']), "roster.md")
+    pages_dir = os.path.join(pages_dir, "roster.md")
     with open(pages_dir, 'w+') as night_file:
         night_file.write(template.render(team_list=teams,
                                          year=season['year'],
@@ -166,7 +166,7 @@ def generate_standings():
     season = read_yaml('season.yaml')
     divisions = read_yaml('teams.yaml')
 
-    pages_dir = os.path.join(os.getcwd(), 'content', 'standings')
+    pages_dir = os.path.join(os.getcwd(), 'content')
     if not os.path.exists(pages_dir):
         os.makedirs(pages_dir)
 

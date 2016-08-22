@@ -4,10 +4,10 @@
 #Written by Jeremy Breiding jbreiding@hotmail.com, 2016
 courts_per_night: 2
 games_per_court: 4
-nights_per_season: 10
-season: 'summer'
+nights_per_season: 9
+season: 'fall'
 times: ['7:00', '7:00', '7:40', '7:40', '8:20', '8:20', '9:00', '9:00']
 year: 2016
-startdate: '2016-06-08'
+startdate: '2016-08-31'
 holiday_weeks: 0
 holiday_nights: []
