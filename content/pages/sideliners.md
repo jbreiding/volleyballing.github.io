@@ -1,6 +1,4 @@
 Title: SideLiners
-Category: locations
-Tags: locations, page
 Summary: Here is a blurb about SideLiners
 
 Games are scheduled between 7 and 9 pm, Wednesday nights.

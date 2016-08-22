@@ -1,6 +1,4 @@
 Title: League Guidelines
-Category: guidelines
-Tags: guidelines, page
 Summary: Here is a blurb about league guidelines
 
 #### RACKSPACE LEAGUE SAND VOLLEYBALL RULES

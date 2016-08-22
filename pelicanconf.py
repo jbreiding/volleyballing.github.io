@@ -48,3 +48,6 @@ AVATAR = '/images/emblemmatic-racker-volleyball-league-logo-804.svg'
 
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ['series', 'md-metayaml', 'bootstrapify']
+
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
+DISPLAY_CATEGORIES_ON_MENU = False

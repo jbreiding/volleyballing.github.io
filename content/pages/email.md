@@ -1,6 +1,4 @@
 Title: Email
-Category: email
-Tags: email, page
 Summary: Welcome to the racker volleyball league email list signup
 
 <!-- Begin MailChimp Signup Form -->

@@ -1,6 +1,4 @@
 Title: Weather
-Category: weather
-Tags: weather, page
 Summary: Game Day Weather Conditions
 
 A note about weather conditions:
