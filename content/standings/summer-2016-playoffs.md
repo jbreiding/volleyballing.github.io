@@ -1,8 +1,8 @@
 Title: 2016 summer Playoffs - 2016-08-17
 Slug: 2016-summer-playoffs
 Date: 2016-08-17
-Tags: 2016, summer
-Category: playoffs
+Category: summer-2016
+Series: summer-2016
 Summary: 2016 summer Playoffs - 2016-08-17
 
 > Winners are shown in **bold** after the match is completed.

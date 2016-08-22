@@ -1,7 +1,6 @@
 Title: 2016 summer Night 07 - 2016-07-27
 Slug: 2016-summer-07
 Date: 2016-07-21
-Tags: 2016, summer
 Category: summer-2016
 Series: summer-2016
 Summary: 2016 summer Night 07 - 2016-07-27

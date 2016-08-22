@@ -5,8 +5,8 @@ Proprietary and confidential
 Written by Jeremy Breiding jbreiding@hotmail.com, 2016
 #}{% block body %}Title: {{ season }} {{ year }} Standings
 Date: {{ date }}
-Tags: {{ year }}, {{ season }}
-Category: standings
+Category: {{ season }}-{{ year }}
+Series: {{ season }}-{{ year }}
 Summary: {{ season }} {{ year }} Standings
 {% for division in team_list %}
 {{ division.division }}

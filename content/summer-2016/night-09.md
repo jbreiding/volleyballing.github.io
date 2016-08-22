@@ -1,7 +1,6 @@
 Title: 2016 summer Night 09 - 2016-08-10
 Slug: 2016-summer-09
 Date: 2016-08-06
-Tags: 2016, summer
 Category: summer-2016
 Series: summer-2016
 Summary: 2016 summer Night 09 - 2016-08-10

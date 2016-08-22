@@ -1,7 +1,7 @@
 Title: summer 2016 Teams
 Date: 2016-06-01
-Tags: 2016, summer
-Category: rosters
+Category: summer-2016
+Series: summer-2016
 Summary: summer 2016 Teams
 
 sharks

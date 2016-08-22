@@ -1,7 +1,7 @@
 Title: summer 2016 Standings
 Date: 2016-08-11
-Tags: 2016, summer
-Category: standings
+Category: summer-2016
+Series: summer-2016
 Summary: summer 2016 Standings
 
 sharks
