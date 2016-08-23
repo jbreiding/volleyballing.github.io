@@ -8,7 +8,7 @@ sharks
 =====
 | Team Name | Captain |
 | ---- ---- | ------- |
-| Thats what she set | Tripsie Coker |
+| That's what she set | Tripsie Coker |
 | I'd Hit That | Mark Houston |
 | Setty Wap | Jeannie Harrington |
 | Snack Pack | Daniel Sensenderfer |
