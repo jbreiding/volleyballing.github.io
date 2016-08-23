@@ -40,7 +40,7 @@ def parse_args():
 
 
 def read_yaml(path):
-    teams = yaml.load(open(os.path.join("data", path)).read())
+    teams = yaml.load(open(os.path.join(os.getcwd(), "data", path)).read())
     return teams
 
 
@@ -53,7 +53,7 @@ def get_template(name):
     return Template(open(os.path.join("data", name)).read())
 
 
-def create_schedule(list, games_per_season):
+def create_games(list, games_per_season):
     """ Create a schedule for the teams in the list and return it"""
     s = []
 
@@ -85,21 +85,29 @@ def create_schedule(list, games_per_season):
     return s
 
 
-def generate_schedule():
+def create_schedule():
+    if os.path.exists(os.path.join(os.getcwd(), 'data', 'schedule.yaml')):
+        return
+
     season = read_yaml('season.yaml')
     times = season['times']
     games_per_season = (season['games_per_court'] *
                         season['courts_per_night'] *
                         (season['nights_per_season']))
+
     game_nights = {}
     for division in read_yaml('teams.yaml'):
         game_night = None
-        for idx, round in enumerate(create_schedule(division['teams'],
+        start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
+
+        for idx, round in enumerate(create_games(division['teams'],
                                     games_per_season)):
             if not game_night:
                 night = (idx / len(times)) + 1
                 game_night = {'division': division['division'],
-                              'night': night, 'games': []}
+                              'night': night,
+                              'date': start_date, 
+                              'games': []}
 
             game_night['games'] += [{'court': division['courts'][0],
                                      'time': times[idx % len(times)],
@@ -112,18 +120,21 @@ def generate_schedule():
                     game_nights[game_night['night']] = []
 
                 game_nights[game_night['night']].extend([game_night])
+                start_date += timedelta(days=7)
                 game_night = None
-
-    season_dir = os.path.join(os.getcwd(), 'content',
-                              "%s-%d" % (season['season'], season['year']))
-    if not os.path.exists(season_dir):
-        os.makedirs(season_dir)
 
     write_yaml(os.path.join(os.getcwd(), 'data', 'schedule.yaml'), game_nights)
 
-    start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
+def generate_schedule():
+    season = read_yaml('season.yaml')
+    create_schedule()
+    game_nights = read_yaml('schedule.yaml')
+
+    season_dir = os.path.join(os.getcwd(), 'content',
+                              "%s-%d" % (season['season'], season['year']))
 
     for key, night in game_nights.iteritems():
+        game_date = night[0]['date']
         template = get_template('night.templ')
         night_md = os.path.join(season_dir, "night-%02d.md" % key)
 
@@ -135,12 +146,8 @@ def generate_schedule():
                                              night="%02d" % key,
                                              season=season['season'],
                                              divisions=night,
-                                             date=(start_date -
-                                                   timedelta(days=6)).
-                                             date(),
-                                             game_date=start_date.date()))
-
-        start_date += timedelta(days=7)
+                                             date=(game_date -
+                                                   timedelta(days=6))))
 
 
 def generate_teams():
@@ -248,7 +255,7 @@ def generate_standings():
                                                             season['holiday_weeks'])),
                                            game_date=start_date +
                                                    timedelta(weeks=season['nights_per_season'] +
-                                                            season['holiday_weeks'])))
+                                                            season['holiday_weeks'] + 1)))
 
 
 def generate_playoffs(sorted_division):

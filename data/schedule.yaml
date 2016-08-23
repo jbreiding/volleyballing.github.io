@@ -1,5 +1,6 @@
 1:
-- division: sharks
+- date: 2016-08-31
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: All About That Ace, time: '7:00'}
   - {away: I'd Hit That, court: '10', home: Happy Bumpers, time: '7:00'}
@@ -10,7 +11,8 @@
   - {away: Kinky Sets, court: '9', home: I'd Hit That, time: '9:00'}
   - {away: Snack Pack, court: '10', home: Setty Wap, time: '9:00'}
   night: 1
-- division: minnows
+- date: 2016-08-31
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Deeznets, time: '7:00'}
   - {away: 'Snap, Crackle, Pop', court: '8', home: TBD, time: '7:00'}
@@ -22,7 +24,8 @@
   - {away: Sandsational, court: '8', home: Ballers on a Budget, time: '9:00'}
   night: 1
 2:
-- division: sharks
+- date: 2016-09-07
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: Sandy Cheeks, time: '7:00'}
   - {away: Happy Bumpers, court: '10', home: Kinky Sets, time: '7:00'}
@@ -33,7 +36,8 @@
   - {away: Setty Wap, court: '9', home: Happy Bumpers, time: '9:00'}
   - {away: I'd Hit That, court: '10', home: All About That Ace, time: '9:00'}
   night: 2
-- division: minnows
+- date: 2016-09-07
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: TBD, time: '7:00'}
   - {away: TBD, court: '8', home: Marco, time: '7:00'}
@@ -45,7 +49,8 @@
   - {away: 'Snap, Crackle, Pop', court: '8', home: Deeznets, time: '9:00'}
   night: 2
 3:
-- division: sharks
+- date: 2016-09-14
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: Snack Pack, time: '7:00'}
   - {away: Kinky Sets, court: '10', home: Setty Wap, time: '7:00'}
@@ -56,7 +61,8 @@
   - {away: All About That Ace, court: '9', home: Kinky Sets, time: '9:00'}
   - {away: Happy Bumpers, court: '10', home: Sandy Cheeks, time: '9:00'}
   night: 3
-- division: minnows
+- date: 2016-09-14
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Sandsational, time: '7:00'}
   - {away: Marco, court: '8', home: Ballers on a Budget, time: '7:00'}
@@ -68,7 +74,8 @@
   - {away: TBD, court: '8', home: TBD, time: '9:00'}
   night: 3
 4:
-- division: sharks
+- date: 2016-09-21
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: I'd Hit That, time: '7:00'}
   - {away: Setty Wap, court: '10', home: All About That Ace, time: '7:00'}
@@ -79,7 +86,8 @@
   - {away: Sandy Cheeks, court: '9', home: Setty Wap, time: '9:00'}
   - {away: Kinky Sets, court: '10', home: Snack Pack, time: '9:00'}
   night: 4
-- division: minnows
+- date: 2016-09-21
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: 'Snap, Crackle, Pop', time: '7:00'}
   - {away: Ballers on a Budget, court: '8', home: Deeznets, time: '7:00'}
@@ -91,7 +99,8 @@
   - {away: Marco, court: '8', home: Sandsational, time: '9:00'}
   night: 4
 5:
-- division: sharks
+- date: 2016-09-28
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: Happy Bumpers, time: '7:00'}
   - {away: All About That Ace, court: '10', home: Sandy Cheeks, time: '7:00'}
@@ -102,7 +111,8 @@
   - {away: Snack Pack, court: '9', home: All About That Ace, time: '9:00'}
   - {away: Setty Wap, court: '10', home: I'd Hit That, time: '9:00'}
   night: 5
-- division: minnows
+- date: 2016-09-28
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: TBD, time: '7:00'}
   - {away: Deeznets, court: '8', home: TBD, time: '7:00'}
@@ -114,7 +124,8 @@
   - {away: Ballers on a Budget, court: '8', home: 'Snap, Crackle, Pop', time: '9:00'}
   night: 5
 6:
-- division: sharks
+- date: 2016-10-05
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: Kinky Sets, time: '7:00'}
   - {away: Sandy Cheeks, court: '10', home: Snack Pack, time: '7:00'}
@@ -125,7 +136,8 @@
   - {away: I'd Hit That, court: '9', home: Sandy Cheeks, time: '9:00'}
   - {away: All About That Ace, court: '10', home: Happy Bumpers, time: '9:00'}
   night: 6
-- division: minnows
+- date: 2016-10-05
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Marco, time: '7:00'}
   - {away: TBD, court: '8', home: Sandsational, time: '7:00'}
@@ -137,7 +149,8 @@
   - {away: Deeznets, court: '8', home: TBD, time: '9:00'}
   night: 6
 7:
-- division: sharks
+- date: 2016-10-12
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: Setty Wap, time: '7:00'}
   - {away: Snack Pack, court: '10', home: I'd Hit That, time: '7:00'}
@@ -148,7 +161,8 @@
   - {away: Happy Bumpers, court: '9', home: Snack Pack, time: '9:00'}
   - {away: Sandy Cheeks, court: '10', home: Kinky Sets, time: '9:00'}
   night: 7
-- division: minnows
+- date: 2016-10-12
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Ballers on a Budget, time: '7:00'}
   - {away: Sandsational, court: '8', home: 'Snap, Crackle, Pop', time: '7:00'}
@@ -160,7 +174,8 @@
   - {away: TBD, court: '8', home: Marco, time: '9:00'}
   night: 7
 8:
-- division: sharks
+- date: 2016-10-19
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: All About That Ace, time: '7:00'}
   - {away: I'd Hit That, court: '10', home: Happy Bumpers, time: '7:00'}
@@ -171,7 +186,8 @@
   - {away: Kinky Sets, court: '9', home: I'd Hit That, time: '9:00'}
   - {away: Snack Pack, court: '10', home: Setty Wap, time: '9:00'}
   night: 8
-- division: minnows
+- date: 2016-10-19
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Deeznets, time: '7:00'}
   - {away: 'Snap, Crackle, Pop', court: '8', home: TBD, time: '7:00'}
@@ -183,7 +199,8 @@
   - {away: Sandsational, court: '8', home: Ballers on a Budget, time: '9:00'}
   night: 8
 9:
-- division: sharks
+- date: 2016-10-26
+  division: sharks
   games:
   - {away: That's what she set, court: '9', home: Sandy Cheeks, time: '7:00'}
   - {away: Happy Bumpers, court: '10', home: Kinky Sets, time: '7:00'}
@@ -194,7 +211,8 @@
   - {away: Setty Wap, court: '9', home: Happy Bumpers, time: '9:00'}
   - {away: I'd Hit That, court: '10', home: All About That Ace, time: '9:00'}
   night: 9
-- division: minnows
+- date: 2016-10-26
+  division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: TBD, time: '7:00'}
   - {away: TBD, court: '8', home: Marco, time: '7:00'}
