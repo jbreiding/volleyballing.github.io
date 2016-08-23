@@ -90,7 +90,7 @@ def generate_schedule():
     times = season['times']
     games_per_season = (season['games_per_court'] *
                         season['courts_per_night'] *
-                        (season['nights_per_season'] - 1))
+                        (season['nights_per_season']))
     game_nights = {}
     for division in read_yaml('teams.yaml'):
         game_night = None
@@ -118,6 +118,8 @@ def generate_schedule():
                               "%s-%d" % (season['season'], season['year']))
     if not os.path.exists(season_dir):
         os.makedirs(season_dir)
+
+    write_yaml(os.path.join(os.getcwd(), 'data', 'schedule.yaml'), game_nights)
 
     start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
 
@@ -165,10 +167,6 @@ def generate_teams():
 def generate_standings():
     season = read_yaml('season.yaml')
     divisions = read_yaml('teams.yaml')
-
-    pages_dir = os.path.join(os.getcwd(), 'content')
-    if not os.path.exists(pages_dir):
-        os.makedirs(pages_dir)
 
     season_dir = os.path.join(os.getcwd(), 'content',
                               "%s-%d" % (season['season'], season['year']))
@@ -220,7 +218,7 @@ def generate_standings():
         sorted_divisions.append(division)
 
     standings_template = get_template('standings.templ')
-    standings_dir = os.path.join(pages_dir, "%s-%d" % (season['season'], season['year']), "standings.md")
+    standings_dir = os.path.join(season_dir, "standings.md")
     with open(standings_dir, 'w+') as standing_file:
         standing_file.write(standings_template.render(team_list=sorted_divisions,
                                             year=season['year'],
@@ -235,7 +233,9 @@ def generate_standings():
         playoffs.append(bracket)
 
     playoff_template = get_template('playoff.templ')
-    playoffdir = os.path.join(pages_dir, "%s-%d" % (season['season'], season['year']), "playoffs.md")
+    playoffdir = os.path.join(season_dir, "playoffs.md")
+
+    write_yaml(os.path.join(os.getcwd(), 'data', 'playoffs.yaml'), playoffs)
 
     start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
 
