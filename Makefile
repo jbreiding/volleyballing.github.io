@@ -144,7 +144,7 @@ github: publish
 update_source:
 	git add -A .
 ifdef MSG
-	git commit -m $(MSG)
+	git commit -m "$(MSG)"
 else
 	git commit
 endif
