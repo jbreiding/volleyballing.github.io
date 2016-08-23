@@ -227,6 +227,9 @@ def generate_standings():
 
     standings_template = get_template('standings.templ')
     standings_dir = os.path.join(season_dir, "standings.md")
+
+    write_yaml(os.path.join(os.getcwd(), 'data', 'standing.yaml'), sorted_divisions)
+    
     with open(standings_dir, 'w+') as standing_file:
         standing_file.write(standings_template.render(team_list=sorted_divisions,
                                             year=season['year'],
