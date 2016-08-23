@@ -112,7 +112,8 @@ def create_schedule():
             game_night['games'] += [{'court': division['courts'][0],
                                      'time': times[idx % len(times)],
                                      'home': round[0]['name'],
-                                     'away': round[1]['name']}]
+                                     'away': round[1]['name'],
+                                     'winner': ''}]
             division['courts'].reverse()
 
             if len(game_night['games']) == len(times):
