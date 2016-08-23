@@ -45,7 +45,7 @@ def read_yaml(path):
 
 
 def write_yaml(path, data):
-    with open(os.path.join("data", path), 'w') as yamlr:
+    with open(os.path.join(os.getcwd(), "data", path), 'w') as yamlr:
         yamlr.writelines(yaml.dump(data))
 
 
@@ -124,7 +124,7 @@ def create_schedule():
                 start_date += timedelta(days=7)
                 game_night = None
 
-    write_yaml(os.path.join(os.getcwd(), 'data', 'schedule.yaml'), game_nights)
+    write_yaml('schedule.yaml', game_nights)
 
 def generate_schedule():
     season = read_yaml('season.yaml')
@@ -228,7 +228,7 @@ def generate_standings():
     standings_template = get_template('standings.templ')
     standings_dir = os.path.join(season_dir, "standings.md")
 
-    write_yaml(os.path.join(os.getcwd(), 'data', 'standing.yaml'), sorted_divisions)
+    write_yaml('standings.yaml', sorted_divisions)
     
     with open(standings_dir, 'w+') as standing_file:
         standing_file.write(standings_template.render(team_list=sorted_divisions,
@@ -246,7 +246,7 @@ def generate_standings():
     playoff_template = get_template('playoff.templ')
     playoffdir = os.path.join(season_dir, "playoffs.md")
 
-    write_yaml(os.path.join(os.getcwd(), 'data', 'playoffs.yaml'), playoffs)
+    write_yaml('playoffs.yaml', playoffs)
 
     start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
 
