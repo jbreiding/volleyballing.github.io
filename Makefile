@@ -12,25 +12,9 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-FTP_HOST=localhost
-FTP_USER=anonymous
-FTP_TARGET_DIR=/
-
-SSH_HOST=localhost
-SSH_PORT=22
-SSH_USER=root
-SSH_TARGET_DIR=/var/www
-
-S3_BUCKET=my_s3_bucket
-
-CLOUDFILES_USERNAME=my_rackspace_username
-CLOUDFILES_API_KEY=my_rackspace_api_key
-CLOUDFILES_CONTAINER=my_cloudfiles_container
-
-DROPBOX_DIR=~/Dropbox/Public/
-
 GITHUB_PAGES_BRANCH=master
 GITHUB_SOURCE_BRANCH=source
+GITHUB_REMOTE=origin
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -54,12 +38,6 @@ help:
 	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
 	@echo '   make devserver [PORT=8000]          start/restart develop_server.sh    '
 	@echo '   make stopserver                     stop local server                  '
-	@echo '   make ssh_upload                     upload the web site via SSH        '
-	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
-	@echo '   make dropbox_upload                 upload the web site via Dropbox    '
-	@echo '   make ftp_upload                     upload the web site via FTP        '
-	@echo '   make s3_upload                      upload the web site via S3         '
-	@echo '   make cf_upload                      upload the web site via Cloud Files'
 	@echo '   make github                         upload the web site via gh-pages   '
 	@echo '   make teams                          generate the roster page after updating yamls'
 	@echo '   make schedule                       generate the schedule for the season'
@@ -104,6 +82,7 @@ endif
 schedule:
 	$(BASEDIR)/sportscastr --schedule
 	@echo 'Generated schedules for the season'
+
 teams:
 	$(BASEDIR)/sportscastr --teams
 	@echo 'Generated roster page'
@@ -119,36 +98,18 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-ssh_upload: publish
-	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
-
-rsync_upload: publish
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvzc --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
-
-dropbox_upload: publish
-	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
-
-ftp_upload: publish
-	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
-
-s3_upload: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type
-
-cf_upload: publish
-	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
-
 github: publish
-	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
-	git push origin $(GITHUB_PAGES_BRANCH)
+	ghp-import -m "Generate Pelican site" -r $(GITHUB_REMOTE) -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+	git push $(GITHUB_REMOTE) $(GITHUB_PAGES_BRANCH)
 
 update_source:
-	git add -A .
+	cd $(BASEDIR) && git add -A .
 ifdef MSG
 	git commit -m "$(MSG)"
 else
 	git commit
 endif
-	git push origin $(GITHUB_SOURCE_BRANCH)
+	git push $(GITHUB_REMOTE) $(GITHUB_SOURCE_BRANCH)
 
 
-.PHONY: standings update_source html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github teams schedules
+.PHONY: standings update_source html help clean regenerate serve serve-global devserver publish github teams schedules
