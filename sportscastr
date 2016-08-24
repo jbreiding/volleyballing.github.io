@@ -22,7 +22,7 @@ def parse_args():
         description="Generate pages for consumption by pelican static "
         "website generator.")
 
-    group = parser.add_mutually_exclusive_group()
+    group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument(
         "--teams", action="store_true",
         help="Generate page for rosters from data/teams.yaml and "
@@ -135,14 +135,13 @@ def generate_schedule():
                               "%s-%d" % (season['season'], season['year']))
 
     regular_md = os.path.join(season_dir, "regular.md")
-    if not os.path.exists(regular_md):
-        template = get_template('regular.templ')
+    template = get_template('regular.templ')
 
-        with open(regular_md, 'w') as regular_file:
-            regular_file.write(template.render(year=season['year'],
-                                               season=season['season'],
-                                               nights=game_nights,
-                                               date=datetime.strptime(season['startdate'], '%Y-%m-%d').date()))
+    with open(regular_md, 'w') as regular_file:
+        regular_file.write(template.render(year=season['year'],
+                                            season=season['season'],
+                                            nights=game_nights,
+                                            date=datetime.strptime(season['startdate'], '%Y-%m-%d').date()))
 
 
 def generate_teams():
@@ -167,8 +166,10 @@ def generate_teams():
 
 
 def generate_standings():
+    generate_schedule()
     season = read_yaml('season.yaml')
     divisions = read_yaml('teams.yaml')
+    schedule = read_yaml('schedule.yaml')
 
     season_dir = os.path.join(os.getcwd(), 'content',
                               "%s-%d" % (season['season'], season['year']))
@@ -178,34 +179,22 @@ def generate_standings():
         'losers': Counter(),
         'ties': Counter()}
 
-    begin_table = '<!-- begin table -->'
-    end_table = '<!-- end table -->'
-    for night_file in os.listdir(season_dir):
-        with open(os.path.join(season_dir, night_file)) as night_md:
-            table_begin = night_md.read().split(begin_table)
+    for key, night in schedule.iteritems():
+        for division in night:
+            if division['date'] >= datetime.now().date():
+                break
 
-            night_date = table_begin[0].split("\n")[0].split(" - ")[1]
-            night_date = datetime.strptime(night_date, '%Y-%m-%d').date()
-            if night_date >= datetime.now().date():
-                continue
+            for game in division['games']:
+                if game['winner'] == 'h':
+                    standings['winners'].update([game['home']])
+                    standings['losers'].update([game['away']])
+                elif game['winner'] == 'a':
+                    standings['winners'].update([game['away']])
+                    standings['losers'].update([game['home']])
+                else:
+                    standings['ties'].update([game['away'], game['home']])
 
-            for table in table_begin[1:]:
-                for row in table.split(end_table)[0].strip().split('\n'):
-                        teams = [team.strip('*') for team in
-                                 row.strip(" |").split(" | ")[2:]]
-                        team_code = ''.join([team[:1] for team in
-                                            row.split(" | ")[2:]])
-
-                        if team_code == "**" or "*" not in team_code:
-                            standings['ties'].update(teams)
-                        elif team_code[0] == "*":
-                            standings['winners'].update([teams[0]])
-                            standings['losers'].update([teams[1]])
-                        elif team_code[1] == "*":
-                            standings['winners'].update([teams[1]])
-                            standings['losers'].update([teams[0]])
-                        else:
-                            print teams
+    
     sorted_divisions = []
     for division in divisions:
         for team in division['teams']:
@@ -230,33 +219,38 @@ def generate_standings():
                                             season=season['season'],
                                             date=str(datetime.now().date())))
 
-    playoffs = []
-    for division in sorted_divisions:
-        bracket = {}
-        bracket['division'] = division['division']
-        bracket['games'] = generate_playoffs(division)
-        playoffs.append(bracket)
+    playoff_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date() + timedelta(weeks=(season['nights_per_season'] + season['holiday_weeks']))
+
+    if datetime.now().date() > playoff_date - timedelta(weeks=1):
+        generate_playoffs()
+
+
+def generate_playoffs():
+    season = read_yaml('season.yaml')
+    season_dir = os.path.join(os.getcwd(), 'content',
+                              "%s-%d" % (season['season'], season['year']))
+    create_playoffs()
+    playoffs = read_yaml('playoffs.yaml')
 
     playoff_template = get_template('playoff.templ')
     playoffdir = os.path.join(season_dir, "playoffs.md")
 
-    write_yaml('playoffs.yaml', playoffs)
-
-    start_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date()
+    playoff_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date() + timedelta(weeks=(season['nights_per_season'] + season['holiday_weeks']))
 
     with open(playoffdir, 'w+') as playoff_file:
         playoff_file.write(playoff_template.render(divisions=playoffs,
                                            year=season['year'],
                                            season=season['season'],
-                                           date=start_date +
-                                                   timedelta(weeks=(season['nights_per_season'] +
-                                                            season['holiday_weeks'])),
-                                           game_date=start_date +
-                                                   timedelta(weeks=season['nights_per_season'] +
-                                                            season['holiday_weeks'] + 1)))
+                                           date=playoff_date,
+                                           game_date=playoff_date))
 
 
-def generate_playoffs(sorted_division):
+def create_playoffs():
+    if os.path.exists(os.path.join(os.getcwd(), 'data', 'playoffs.yaml')):
+        return
+
+    sorted_divisions = read_yaml('standings.yaml')
+
     def divide(arr, depth, m):
         if len(complements) <= depth:
             complements.append(2 ** (depth + 2) + 1)
@@ -266,33 +260,42 @@ def generate_playoffs(sorted_division):
                 arr[i] = [arr[i], complement - arr[i]]
                 divide(arr[i], depth + 1, m)
 
-    m = len(sorted_division['teams'])
+    playoff_games = []
 
-    arr = [1,2]
-    complements = []
+    for sorted_division in sorted_divisions:
+        bracket = {}
+        bracket['division'] = division['division']
 
-    divide(arr, 0, m)
+        m = len(sorted_division['teams'])
 
-    games = []
-    times = read_yaml('season.yaml')['times']
-    courts = sorted_division['courts']
+        arr = [1,2]
+        complements = []
 
-    for bracket in arr:
-        for match in bracket:
-            games.append((sorted_division['teams'][match[0]-1]['name'],sorted_division['teams'][match[1]-1]['name']))
+        divide(arr, 0, m)
 
-    for x in xrange(0, len(games), 2):
-        games.append(("Winner of %s" % str(games[x]), "Winner of %s" % str(games[x+1])))
+        games = []
+        times = read_yaml('season.yaml')['times']
+        courts = sorted_division['courts']
 
-    games.append(("Finals", "Finals"))
-    playoffs = []
-    for idx, game in enumerate(games):
-        playoffs.append({"time":times[idx % len(times)], 
-                        "court": courts[idx % len(courts)],
-                        "home": game[0], 
-                        "away": game[1]})
+        for bracket in arr:
+            for match in bracket:
+                games.append((sorted_division['teams'][match[0]-1]['name'],sorted_division['teams'][match[1]-1]['name']))
 
-    return playoffs
+        for x in xrange(0, len(games), 2):
+            games.append(("Winner of %s" % str(games[x]), "Winner of %s" % str(games[x+1])))
+
+        games.append(("Finals", "Finals"))
+        playoffs = []
+        for idx, game in enumerate(games):
+            playoffs.append({"time":times[idx % len(times)], 
+                            "court": courts[idx % len(courts)],
+                            "home": game[0], 
+                            "away": game[1]})
+
+        bracket['games'] = playoffs
+        playoff_games.append(bracket)
+
+    write_yaml('playoffs.yaml', playoff_games)
 
 
 def main():

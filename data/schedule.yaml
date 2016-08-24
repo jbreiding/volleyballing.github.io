@@ -2,8 +2,7 @@
 - date: 2016-08-31
   division: sharks
   games:
-  - {away: That's what she set, court: '9', home: All About That Ace, time: '7:00',
-    winner: ''}
+  - {away: That's what she set, court: '9', home: All About That Ace, time: '7:00', winner: ''}
   - {away: I'd Hit That, court: '10', home: Happy Bumpers, time: '7:00', winner: ''}
   - {away: Setty Wap, court: '9', home: Sandy Cheeks, time: '7:40', winner: ''}
   - {away: Snack Pack, court: '10', home: Kinky Sets, time: '7:40', winner: ''}
@@ -16,8 +15,7 @@
   division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Deeznets, time: '7:00', winner: ''}
-  - {away: 'Snap, Crackle, Pop', court: '8', home: Sets on the Beach, time: '7:00',
-    winner: ''}
+  - {away: 'Snap, Crackle, Pop', court: '8', home: Sets on the Beach, time: '7:00', winner: ''}
   - {away: Ballers on a Budget, court: '7', home: Throwbacks, time: '7:40', winner: ''}
   - {away: Sandsational, court: '8', home: Marco, time: '7:40', winner: ''}
   - {away: Sets on the Beach, court: '7', home: Settin Sideways, time: '8:20', winner: ''}

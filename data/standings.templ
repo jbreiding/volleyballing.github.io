@@ -14,7 +14,6 @@ Summary: {{ season }} {{ year }} Standings
 | Team Name | Captain | Wins | Loss | Tie | Points |
 | --- | --- | --- | --- | --- | --- |
 {% for team in division.teams %}| {{ team.name }} | {{ team.captain }} | {{ team.wins }} | {{ team.losses }} | {{ team.ties }} | {{ team.points }} |
-  {% endfor %}
-{% endfor %}
+{% endfor %}{% endfor %}
 
 {% endblock %}

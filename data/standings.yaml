@@ -1,0 +1,30 @@
+- courts: ['9', '10']
+  division: sharks
+  teams:
+  - {captain: Tripsie Coker, losses: 0, name: That's what she set, points: 0, ties: 0,
+    wins: 0}
+  - {captain: Mark Houston, losses: 0, name: I'd Hit That, points: 0, ties: 0, wins: 0}
+  - {captain: Jeannie Harrington, losses: 0, name: Setty Wap, points: 0, ties: 0,
+    wins: 0}
+  - {captain: Daniel Sensenderfer, losses: 0, name: Snack Pack, points: 0, ties: 0,
+    wins: 0}
+  - {captain: Brandi Flores, losses: 0, name: Kinky Sets, points: 0, ties: 0, wins: 0}
+  - {captain: Lauren Bayer, losses: 0, name: Sandy Cheeks, points: 0, ties: 0, wins: 0}
+  - {captain: Eric Thomas, losses: 0, name: Happy Bumpers, points: 0, ties: 0, wins: 0}
+  - {captain: Kari White, losses: 0, name: All About That Ace, points: 0, ties: 0,
+    wins: 0}
+- courts: ['7', '8']
+  division: minnows
+  teams:
+  - {captain: Will Martinez, losses: 0, name: Settin Sideways, points: 0, ties: 0,
+    wins: 0}
+  - {captain: Jason Vick, losses: 0, name: 'Snap, Crackle, Pop', points: 0, ties: 0,
+    wins: 0}
+  - {captain: Lauren La Geese, losses: 0, name: Ballers on a Budget, points: 0, ties: 0,
+    wins: 0}
+  - {captain: Rick Lozano, losses: 0, name: Sandsational, points: 0, ties: 0, wins: 0}
+  - {captain: Chris Bartels, losses: 0, name: Marco, points: 0, ties: 0, wins: 0}
+  - {captain: Phil Sprofera, losses: 0, name: Throwbacks, points: 0, ties: 0, wins: 0}
+  - {captain: Alex Ortiz, losses: 0, name: Sets on the Beach, points: 0, ties: 0,
+    wins: 0}
+  - {captain: Kevin Mylacraine, losses: 0, name: Deeznets, points: 0, ties: 0, wins: 0}
