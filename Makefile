@@ -112,4 +112,4 @@ endif
 	git push $(GITHUB_REMOTE) $(GITHUB_SOURCE_BRANCH)
 
 
-.PHONY: standings update_source html help clean regenerate serve serve-global devserver publish github teams schedules
+.PHONY: standings update_source html help clean regenerate serve serve-global devserver publish github teams schedule

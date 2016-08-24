@@ -16,11 +16,12 @@
   division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Deeznets, time: '7:00', winner: ''}
-  - {away: 'Snap, Crackle, Pop', court: '8', home: TBD, time: '7:00', winner: ''}
-  - {away: Ballers on a Budget, court: '7', home: TBD, time: '7:40', winner: ''}
+  - {away: 'Snap, Crackle, Pop', court: '8', home: Sets on the Beach, time: '7:00',
+    winner: ''}
+  - {away: Ballers on a Budget, court: '7', home: Throwbacks, time: '7:40', winner: ''}
   - {away: Sandsational, court: '8', home: Marco, time: '7:40', winner: ''}
-  - {away: TBD, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
-  - {away: TBD, court: '8', home: Deeznets, time: '8:20', winner: ''}
+  - {away: Sets on the Beach, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
+  - {away: Throwbacks, court: '8', home: Deeznets, time: '8:20', winner: ''}
   - {away: Marco, court: '7', home: 'Snap, Crackle, Pop', time: '9:00', winner: ''}
   - {away: Sandsational, court: '8', home: Ballers on a Budget, time: '9:00', winner: ''}
   night: 1
@@ -40,14 +41,15 @@
 - date: 2016-09-07
   division: minnows
   games:
-  - {away: Settin Sideways, court: '7', home: TBD, time: '7:00', winner: ''}
-  - {away: TBD, court: '8', home: Marco, time: '7:00', winner: ''}
+  - {away: Settin Sideways, court: '7', home: Throwbacks, time: '7:00', winner: ''}
+  - {away: Sets on the Beach, court: '8', home: Marco, time: '7:00', winner: ''}
   - {away: Deeznets, court: '7', home: Sandsational, time: '7:40', winner: ''}
   - {away: 'Snap, Crackle, Pop', court: '8', home: Ballers on a Budget, time: '7:40',
     winner: ''}
   - {away: Marco, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
-  - {away: Sandsational, court: '8', home: TBD, time: '8:20', winner: ''}
-  - {away: Ballers on a Budget, court: '7', home: TBD, time: '9:00', winner: ''}
+  - {away: Sandsational, court: '8', home: Throwbacks, time: '8:20', winner: ''}
+  - {away: Ballers on a Budget, court: '7', home: Sets on the Beach, time: '9:00',
+    winner: ''}
   - {away: 'Snap, Crackle, Pop', court: '8', home: Deeznets, time: '9:00', winner: ''}
   night: 2
 3:
@@ -68,12 +70,12 @@
   games:
   - {away: Settin Sideways, court: '7', home: Sandsational, time: '7:00', winner: ''}
   - {away: Marco, court: '8', home: Ballers on a Budget, time: '7:00', winner: ''}
-  - {away: TBD, court: '7', home: 'Snap, Crackle, Pop', time: '7:40', winner: ''}
-  - {away: TBD, court: '8', home: Deeznets, time: '7:40', winner: ''}
+  - {away: Throwbacks, court: '7', home: 'Snap, Crackle, Pop', time: '7:40', winner: ''}
+  - {away: Sets on the Beach, court: '8', home: Deeznets, time: '7:40', winner: ''}
   - {away: Ballers on a Budget, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
   - {away: 'Snap, Crackle, Pop', court: '8', home: Sandsational, time: '8:20', winner: ''}
   - {away: Deeznets, court: '7', home: Marco, time: '9:00', winner: ''}
-  - {away: TBD, court: '8', home: TBD, time: '9:00', winner: ''}
+  - {away: Sets on the Beach, court: '8', home: Throwbacks, time: '9:00', winner: ''}
   night: 3
 4:
 - date: 2016-09-21
@@ -95,11 +97,12 @@
   - {away: Settin Sideways, court: '7', home: 'Snap, Crackle, Pop', time: '7:00',
     winner: ''}
   - {away: Ballers on a Budget, court: '8', home: Deeznets, time: '7:00', winner: ''}
-  - {away: Sandsational, court: '7', home: TBD, time: '7:40', winner: ''}
-  - {away: Marco, court: '8', home: TBD, time: '7:40', winner: ''}
+  - {away: Sandsational, court: '7', home: Sets on the Beach, time: '7:40', winner: ''}
+  - {away: Marco, court: '8', home: Throwbacks, time: '7:40', winner: ''}
   - {away: Deeznets, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
-  - {away: TBD, court: '8', home: 'Snap, Crackle, Pop', time: '8:20', winner: ''}
-  - {away: TBD, court: '7', home: Ballers on a Budget, time: '9:00', winner: ''}
+  - {away: Sets on the Beach, court: '8', home: 'Snap, Crackle, Pop', time: '8:20',
+    winner: ''}
+  - {away: Throwbacks, court: '7', home: Ballers on a Budget, time: '9:00', winner: ''}
   - {away: Marco, court: '8', home: Sandsational, time: '9:00', winner: ''}
   night: 4
 5:
@@ -118,12 +121,12 @@
 - date: 2016-09-28
   division: minnows
   games:
-  - {away: Settin Sideways, court: '7', home: TBD, time: '7:00', winner: ''}
-  - {away: Deeznets, court: '8', home: TBD, time: '7:00', winner: ''}
+  - {away: Settin Sideways, court: '7', home: Sets on the Beach, time: '7:00', winner: ''}
+  - {away: Deeznets, court: '8', home: Throwbacks, time: '7:00', winner: ''}
   - {away: 'Snap, Crackle, Pop', court: '7', home: Marco, time: '7:40', winner: ''}
   - {away: Ballers on a Budget, court: '8', home: Sandsational, time: '7:40', winner: ''}
-  - {away: TBD, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
-  - {away: Marco, court: '8', home: TBD, time: '8:20', winner: ''}
+  - {away: Throwbacks, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
+  - {away: Marco, court: '8', home: Sets on the Beach, time: '8:20', winner: ''}
   - {away: Sandsational, court: '7', home: Deeznets, time: '9:00', winner: ''}
   - {away: Ballers on a Budget, court: '8', home: 'Snap, Crackle, Pop', time: '9:00',
     winner: ''}
@@ -145,13 +148,14 @@
   division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Marco, time: '7:00', winner: ''}
-  - {away: TBD, court: '8', home: Sandsational, time: '7:00', winner: ''}
-  - {away: TBD, court: '7', home: Ballers on a Budget, time: '7:40', winner: ''}
+  - {away: Throwbacks, court: '8', home: Sandsational, time: '7:00', winner: ''}
+  - {away: Sets on the Beach, court: '7', home: Ballers on a Budget, time: '7:40',
+    winner: ''}
   - {away: Deeznets, court: '8', home: 'Snap, Crackle, Pop', time: '7:40', winner: ''}
   - {away: Sandsational, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
   - {away: Ballers on a Budget, court: '8', home: Marco, time: '8:20', winner: ''}
-  - {away: 'Snap, Crackle, Pop', court: '7', home: TBD, time: '9:00', winner: ''}
-  - {away: Deeznets, court: '8', home: TBD, time: '9:00', winner: ''}
+  - {away: 'Snap, Crackle, Pop', court: '7', home: Throwbacks, time: '9:00', winner: ''}
+  - {away: Deeznets, court: '8', home: Sets on the Beach, time: '9:00', winner: ''}
   night: 6
 7:
 - date: 2016-10-12
@@ -172,12 +176,12 @@
   - {away: Settin Sideways, court: '7', home: Ballers on a Budget, time: '7:00', winner: ''}
   - {away: Sandsational, court: '8', home: 'Snap, Crackle, Pop', time: '7:00', winner: ''}
   - {away: Marco, court: '7', home: Deeznets, time: '7:40', winner: ''}
-  - {away: TBD, court: '8', home: TBD, time: '7:40', winner: ''}
+  - {away: Throwbacks, court: '8', home: Sets on the Beach, time: '7:40', winner: ''}
   - {away: 'Snap, Crackle, Pop', court: '7', home: Settin Sideways, time: '8:20',
     winner: ''}
   - {away: Deeznets, court: '8', home: Ballers on a Budget, time: '8:20', winner: ''}
-  - {away: TBD, court: '7', home: Sandsational, time: '9:00', winner: ''}
-  - {away: TBD, court: '8', home: Marco, time: '9:00', winner: ''}
+  - {away: Sets on the Beach, court: '7', home: Sandsational, time: '9:00', winner: ''}
+  - {away: Throwbacks, court: '8', home: Marco, time: '9:00', winner: ''}
   night: 7
 8:
 - date: 2016-10-19
@@ -197,11 +201,12 @@
   division: minnows
   games:
   - {away: Settin Sideways, court: '7', home: Deeznets, time: '7:00', winner: ''}
-  - {away: 'Snap, Crackle, Pop', court: '8', home: TBD, time: '7:00', winner: ''}
-  - {away: Ballers on a Budget, court: '7', home: TBD, time: '7:40', winner: ''}
+  - {away: 'Snap, Crackle, Pop', court: '8', home: Sets on the Beach, time: '7:00',
+    winner: ''}
+  - {away: Ballers on a Budget, court: '7', home: Throwbacks, time: '7:40', winner: ''}
   - {away: Sandsational, court: '8', home: Marco, time: '7:40', winner: ''}
-  - {away: TBD, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
-  - {away: TBD, court: '8', home: Deeznets, time: '8:20', winner: ''}
+  - {away: Sets on the Beach, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
+  - {away: Throwbacks, court: '8', home: Deeznets, time: '8:20', winner: ''}
   - {away: Marco, court: '7', home: 'Snap, Crackle, Pop', time: '9:00', winner: ''}
   - {away: Sandsational, court: '8', home: Ballers on a Budget, time: '9:00', winner: ''}
   night: 8
@@ -221,13 +226,14 @@
 - date: 2016-10-26
   division: minnows
   games:
-  - {away: Settin Sideways, court: '7', home: TBD, time: '7:00', winner: ''}
-  - {away: TBD, court: '8', home: Marco, time: '7:00', winner: ''}
+  - {away: Settin Sideways, court: '7', home: Throwbacks, time: '7:00', winner: ''}
+  - {away: Sets on the Beach, court: '8', home: Marco, time: '7:00', winner: ''}
   - {away: Deeznets, court: '7', home: Sandsational, time: '7:40', winner: ''}
   - {away: 'Snap, Crackle, Pop', court: '8', home: Ballers on a Budget, time: '7:40',
     winner: ''}
   - {away: Marco, court: '7', home: Settin Sideways, time: '8:20', winner: ''}
-  - {away: Sandsational, court: '8', home: TBD, time: '8:20', winner: ''}
-  - {away: Ballers on a Budget, court: '7', home: TBD, time: '9:00', winner: ''}
+  - {away: Sandsational, court: '8', home: Throwbacks, time: '8:20', winner: ''}
+  - {away: Ballers on a Budget, court: '7', home: Sets on the Beach, time: '9:00',
+    winner: ''}
   - {away: 'Snap, Crackle, Pop', court: '8', home: Deeznets, time: '9:00', winner: ''}
   night: 9

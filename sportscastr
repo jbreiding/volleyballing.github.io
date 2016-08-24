@@ -134,21 +134,15 @@ def generate_schedule():
     season_dir = os.path.join(os.getcwd(), 'content',
                               "%s-%d" % (season['season'], season['year']))
 
-    for key, night in game_nights.iteritems():
-        game_date = night[0]['date']
-        template = get_template('night.templ')
-        night_md = os.path.join(season_dir, "night-%02d.md" % key)
+    regular_md = os.path.join(season_dir, "regular.md")
+    if not os.path.exists(regular_md):
+        template = get_template('regular.templ')
 
-        if os.path.exists(night_md):
-            continue
-
-        with open(night_md, 'w') as night_file:
-            night_file.write(template.render(year=season['year'],
-                                             night="%02d" % key,
-                                             season=season['season'],
-                                             divisions=night,
-                                             date=(game_date -
-                                                   timedelta(days=6))))
+        with open(regular_md, 'w') as regular_file:
+            regular_file.write(template.render(year=season['year'],
+                                               season=season['season'],
+                                               nights=game_nights,
+                                               date=datetime.strptime(season['startdate'], '%Y-%m-%d').date()))
 
 
 def generate_teams():

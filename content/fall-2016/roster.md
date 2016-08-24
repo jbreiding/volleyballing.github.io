@@ -27,8 +27,8 @@ minnows
 | Ballers on a Budget | Lauren La Geese |
 | Sandsational | Rick Lozano |
 | Marco | Chris Bartels |
-| TBD | Phil Sprofera |
-| TBD | Alex Ortiz |
+| Throwbacks | Phil Sprofera |
+| Sets on the Beach | Alex Ortiz |
 | Deeznets | Kevin Mylacraine |
 
 

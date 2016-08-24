@@ -1,0 +1,25 @@
+{#
+Copyright (C) Jeremy Breiding, Inc - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Jeremy Breiding jbreiding@hotmail.com, 2016
+#}{% block body %}Title: {{ year }} {{ season }} regular season
+Date: {{ date }}
+Category: {{ season }}-{{ year }}
+Series: {{ season }}-{{ year }}
+Summary: {{ year }} {{ season }} 
+
+> Winners are shown in **bold** after the match is completed.
+{% for key, night in nights.iteritems() %}
+{% for division in night %}{% if loop.first %}
+<h1><a name="night{{key}}" href="#night{{key}}">{{ division.date }}</a></h1>
+{% endif %}
+{{ division.division }}
+=====
+| Time | Court | Home | Away |
+| ---- | ----- | ---- | ---- |
+{% for game in division.games %}| {{ game.time }} | {{ game.court }} | {{ game.home }} | {{ game.away }} |
+{% endfor %}{% endfor %}
+---{% endfor %}
+
+{% endblock %}
