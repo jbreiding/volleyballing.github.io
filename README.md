@@ -1,4 +1,5 @@
-https://travis-ci.org/volleyballing/volleyballing.github.io.svg?branch=source
+[![Build Status](https://travis-ci.org/volleyballing/volleyballing.github.io.svg?branch=source)](https://travis-ci.org/volleyballing/volleyballing.github.io)
+
 # volleyballing.github.io
 Copyright (C) Jeremy Breiding, Inc - All Rights Reserved
 Unauthorized copying of this file, via any medium is strictly prohibited
