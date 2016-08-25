@@ -21,15 +21,15 @@ Workflow today:
  1. Update season.yaml to reflect current season.
  2. Update teams.yaml to reflect current season.
  3. Execute, Make teams
- 4. Execute, Make schedules
- 5. Execute, Make update_source
+ 4. Execute, Make schedule
+ 5. Execute, Make update_source MSG="commit message"
  6. Execute, Make github
 
 Added workflow tomorrow:
- 1. Update nightly md file by italicizing winning team.
+ 1. Update schedule.yaml to reflect winners.
  2. Execute, Make standings
- 3. Execute, Make schedules
- 4. Execute, Make update_source
+ 3. Execute, Make schedule
+ 4. Execute, Make update_source MSG="commit message"
  5. Execute, Make github
 
 The current host is github and this may change.

@@ -107,9 +107,10 @@ update_source:
 ifdef MSG
 	git commit -m "$(MSG)"
 else
-	git commit
+	git commit -m "`date +'%Y-%m-%d %H:%M:%S'`"
 endif
 	git push $(GITHUB_REMOTE) $(GITHUB_SOURCE_BRANCH)
 
+all: teams schedule standings update_source github
 
 .PHONY: standings update_source html help clean regenerate serve serve-global devserver publish github teams schedule
