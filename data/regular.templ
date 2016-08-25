@@ -13,8 +13,8 @@ Summary: {{ season }} {{ year }} Season
 {% for division in night %}{% if loop.first %}
 <h1><a name="night{{key}}" href="#night{{key}}">{{ division.date }}</a></h1>
 {% endif %}
-{{ division.division }}
-=====
+<h2>{{ division.division }}</h2>
+
 | Time | Court | Home | Away |
 | ---- | ----- | ---- | ---- |
 {% for game in division.games %}| {{ game.time }} | {{ game.court }} | {% if game.winner == 'h' %}**{{ game.home }}**{% else %}{{ game.home }}{% endif %} | {% if game.winner == 'a' %}**{{ game.away }}**{% else %}{{ game.away }}{% endif %} |
