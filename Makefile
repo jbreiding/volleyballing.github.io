@@ -42,7 +42,7 @@ help:
 	@echo '   make teams                          generate the roster page after updating yamls'
 	@echo '   make schedule                       generate the schedule for the season'
 	@echo '   make standings                      update the standings for the season'
-	@echo '   make update_source [MSG=]           upload the source to github branch '
+	@echo '   make update_source		          upload the source to github branch '
 	@echo '                                                                          '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
@@ -100,17 +100,22 @@ publish:
 
 github: publish
 	ghp-import -m "Generate Pelican site" -r $(GITHUB_REMOTE) -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
-	git push $(GITHUB_REMOTE) $(GITHUB_PAGES_BRANCH)
+	git push -fq $(GITHUB_REMOTE) $(GITHUB_PAGES_BRANCH)
+
+travis_github: publish
+	ghp-import -m "Generate Pelican site" -r $(GITHUB_REMOTE) -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git  $(GITHUB_PAGES_BRANCH) > /dev/null
 
 update_source:
 	cd $(BASEDIR) && git add -A .
-ifdef MSG
-	git commit -m "$(MSG)"
-else
 	git commit -m "`date +'%Y-%m-%d %H:%M:%S'`"
-endif
 	git push $(GITHUB_REMOTE) $(GITHUB_SOURCE_BRANCH)
 
-all: teams schedule standings update_source github
+travis_update_source:
+	cd $(BASEDIR) && git add -A .
+	git commit -m "`date +'%Y-%m-%d %H:%M:%S'`"
+	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git $(GITHUB_SOURCE_BRANCH) > /dev/null
 
-.PHONY: standings update_source html help clean regenerate serve serve-global devserver publish github teams schedule
+travis: teams schedule standings travis_update_source travis_github
+
+.PHONY: standings update_source html help clean regenerate serve serve-global devserver publish github teams schedule travis_github travis_update_source
