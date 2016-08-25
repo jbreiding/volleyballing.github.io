@@ -37,11 +37,13 @@ DEFAULT_DATE = 'fs'
 MAIN_MENU = True
 MENUITEMS = ()
 GITHUB_URL = 'https://github.com/volleyballing/volleyballing.github.io'
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/custom.css']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/favicon.ico': {'path': 'favicon.ico'}
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/custom.css': {'path': 'static/custom.css'}
 }
+CUSTOM_CSS = '/static/custom.css'
 BOOTSTRAP_THEME = 'flatly'
 ABOUT_ME = 'Just a racker ballin...'
 AVATAR = '/images/emblemmatic-racker-volleyball-league-logo-804.svg'
