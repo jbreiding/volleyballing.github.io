@@ -1,17 +1,12 @@
 language: python
-python:
-  - "3.5"
-sudo: required
-services:
-  - docker
 branches:
   only:
-  - sources
+  - source
 env:
   global:
     secure: "xxxxxxxxxxxx"
 install:
 - pip install ghp-import
-- git clone https://github.com/volleyballing/volleyballing.github.io
+- pip install pelican
 script:
-- make publish github
+- make all

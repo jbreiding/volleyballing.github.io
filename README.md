@@ -9,12 +9,13 @@ This project is the home of the racker volleyball league website.
 The goal is to ingress data through yaml files
  * Teams
  * Seasons
+ * Schedules
  * Standings
  * Playoffs
  * Champions???
 
 Generate from these markdown pages by which pelican, at this time, will generate the website.
- * Entire season schedule is generated up front with dates in the future set to draft
+ * Entire season schedule is generated up front
  * Make is used to execute scaffolding and generation
 
 Workflow today:
@@ -33,14 +34,3 @@ Added workflow tomorrow:
  5. Execute, Make github
 
 The current host is github and this may change.
-
-### TODO:
- 1. Setup mailchimp to feed mailing lists from rss feeds
-  * weather
-  * schedule
-  * roster
- 2. Finalize wording around pages, e.g. guidelines, about, ...
- 3. Playoff generator
- 4. Seal and archive season
- 5. Generate new season
- 6. Sign up???
