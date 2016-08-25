@@ -114,6 +114,8 @@ update_source:
 
 travis_update_source:
 	git add -A .
+	@git config user.name jbreiding > /dev/null
+	@git config user.emial jbreiding@hotmail.com > /dev/null
 	git commit -m "`date +'%Y-%m-%d %H:%M:%S'`"
 	@git remote add upstream https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git > /dev/null
 	@git push -fq upstream $(GITHUB_SOURCE_BRANCH) > /dev/null
