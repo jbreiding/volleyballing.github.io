@@ -1,4 +1,4 @@
-Title: 2016 fall Season
+Title: fall 2016 Season
 Date: 2016-08-31
 Category: fall-2016
 Summary: fall 2016 Season

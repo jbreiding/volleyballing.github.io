@@ -1,7 +1,7 @@
-Title: 2016 summer Season
+Title: summer 2016 Season
 Date: 2016-06-02
 Category: summer-2016
-Summary: 2016 summer Season 
+Summary: summer 2016 Season 
 
 > Winners are shown in **bold** after the match is completed.
 
