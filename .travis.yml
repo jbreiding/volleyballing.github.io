@@ -4,9 +4,10 @@ branches:
   - source
 env:
   global:
-    secure: "xxxxxxxxxxxx"
+  - secure: fcj+hau10JAnHpf+6A42KU5WzuOi2At9ggpZCig5/6e5YTHPPo0aQbYetr3ETr5NIz9nRIzHeaBx/pxo3QtBPHp621CX27QaBPQ9JVuBpgoa2PCHcMep5U21ZI4mt2rEXQhWirEzotWg1BK6vGJS4x5JNK6j+JxKdCHX+r180zLTzU5es/p52VbYdLQD4aE81YkaVbxCNj1zKBrgQpR+nt0I13JpdKkjo8dTWnbhCp2NMFTWgmtC3HeOB6hiJCK/Snt8NMADGv8ogxO0kCqpQeMePFVDcqCZswgafrviLJu47VEnJVktNjJPDWnYfsP7WieSGXSoUlDGsPKwpn/+DMUzolaPwZMxapUgpvVvrcpRtclzRW6NZWe6FKu9J8YtB8AsT8+i4G+8Vd1+ZYjYmoELanOTBq7ADZcryYsGa0OPDQVI2zRJu9vOvUG0wvOqu71r84DuZcjL4MvZiv12zNBFu93wXd+wFWmmitNnMXbdvVjPFGxXDUVlqCp4kdTmuRcEJKtTb6dTZKVcmBeNCvkUm8ExoODDQg+8FD35dopVkdQDUnnqvOQK+n52MjvE5HkkUKEgdNEpu1/v5u/eDvv3T/LhcjfduI6aPKtPlTikKlvf+2YRH2MQcLJWydrALtMZVQOuP3cMvngAlYIMecFXF4JAIK7V04agNh6xQYI=
 install:
 - pip install ghp-import
 - pip install pelican
+- pip install requirements.txt
 script:
 - make all
