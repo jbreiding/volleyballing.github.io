@@ -103,7 +103,6 @@ github: publish
 	git push -fq $(GITHUB_REMOTE) $(GITHUB_PAGES_BRANCH)
 
 travis_github: publish
-	@git remote add upstream https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git > /dev/null
 	ghp-import -m "Generate Pelican site" -r upstream -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	@git push -fq upstream  $(GITHUB_PAGES_BRANCH) > /dev/null
 
@@ -113,9 +112,9 @@ update_source:
 	git push $(GITHUB_REMOTE) $(GITHUB_SOURCE_BRANCH)
 
 travis_update_source:
-	git add -A .
 	@git config user.name jbreiding > /dev/null
-	@git config user.emial jbreiding@hotmail.com > /dev/null
+	@git config user.email jbreiding@hotmail.com > /dev/null
+	git add -A .
 	git commit -m "`date +'%Y-%m-%d %H:%M:%S'`"
 	@git remote add upstream https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git > /dev/null
 	@git push -fq upstream $(GITHUB_SOURCE_BRANCH) > /dev/null
