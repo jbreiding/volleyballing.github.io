@@ -2,14 +2,14 @@
 - date: 2016-08-31
   division: sharks
   games:
-  - {away: That's what she set, court: '9', home: All About That Ace, time: '7:00', winner: 'a'}
-  - {away: I'd Hit That, court: '10', home: Happy Bumpers, time: '7:00', winner: 'h'}
-  - {away: Setty Wap, court: '9', home: Sandy Cheeks, time: '7:40', winner: 'a'}
-  - {away: Snack Pack, court: '10', home: Kinky Sets, time: '7:40', winner: 'h'}
-  - {away: Happy Bumpers, court: '9', home: That's what she set, time: '8:20', winner: 'a'}
-  - {away: Sandy Cheeks, court: '10', home: All About That Ace, time: '8:20', winner: 'h'}
-  - {away: Kinky Sets, court: '9', home: I'd Hit That, time: '9:00', winner: 'a'}
-  - {away: Snack Pack, court: '10', home: Setty Wap, time: '9:00', winner: 'h'}
+  - {away: That's what she set, court: '9', home: All About That Ace, time: '7:00', winner: ''}
+  - {away: I'd Hit That, court: '10', home: Happy Bumpers, time: '7:00', winner: ''}
+  - {away: Setty Wap, court: '9', home: Sandy Cheeks, time: '7:40', winner: ''}
+  - {away: Snack Pack, court: '10', home: Kinky Sets, time: '7:40', winner: ''}
+  - {away: Happy Bumpers, court: '9', home: That's what she set, time: '8:20', winner: ''}
+  - {away: Sandy Cheeks, court: '10', home: All About That Ace, time: '8:20', winner: ''}
+  - {away: Kinky Sets, court: '9', home: I'd Hit That, time: '9:00', winner: ''}
+  - {away: Snack Pack, court: '10', home: Setty Wap, time: '9:00', winner: ''}
   night: 1
 - date: 2016-08-31
   division: minnows
