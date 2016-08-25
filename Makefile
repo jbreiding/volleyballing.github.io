@@ -107,13 +107,13 @@ travis_github: publish
 	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git  $(GITHUB_PAGES_BRANCH) > /dev/null
 
 update_source:
-	cd $(BASEDIR) && git add -A .
+	git add -A .
 	git commit -m "`date +'%Y-%m-%d %H:%M:%S'`"
 	git push $(GITHUB_REMOTE) $(GITHUB_SOURCE_BRANCH)
 
 travis_update_source:
-	cd $(BASEDIR) && git add -A .
-	git commit -m "`date +'%Y-%m-%d %H:%M:%S'`"
+	git add -A .
+	ghp-import -m "`date +'%Y-%m-%d %H:%M:%S'`" -r https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git -b $(GITHUB_SOURCE_BRANCH) $(BASEDIR)
 	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git $(GITHUB_SOURCE_BRANCH) > /dev/null
 
 travis: teams schedule standings travis_update_source travis_github
