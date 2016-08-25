@@ -1,8 +1,7 @@
-Title: 2016 fall regular season
+Title: 2016 fall Season
 Date: 2016-08-31
 Category: fall-2016
-Series: fall-2016
-Summary: 2016 fall 
+Summary: fall 2016 Season
 
 > Winners are shown in **bold** after the match is completed.
 
