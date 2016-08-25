@@ -5,9 +5,6 @@ Unauthorized copying of this file, via any medium is strictly prohibited
 Proprietary and confidential
 Written by Jeremy Breiding jbreiding@hotmail.com, 2016
 """
-from __future__ import absolute_import
-from namesgenerator import *
-
 import yaml
 import os
 import argparse
@@ -106,7 +103,7 @@ def create_schedule():
                 night = (idx / len(times)) + 1
                 game_night = {'division': division['division'],
                               'night': night,
-                              'date': start_date, 
+                              'date': start_date,
                               'games': []}
 
             game_night['games'] += [{'court': division['courts'][0],
@@ -126,6 +123,7 @@ def create_schedule():
 
     write_yaml('schedule.yaml', game_nights)
 
+
 def generate_schedule():
     season = read_yaml('season.yaml')
     create_schedule()
@@ -139,9 +137,9 @@ def generate_schedule():
 
     with open(regular_md, 'w') as regular_file:
         regular_file.write(template.render(year=season['year'],
-                                            season=season['season'],
-                                            nights=game_nights,
-                                            date=datetime.strptime(season['startdate'], '%Y-%m-%d').date()))
+                                           season=season['season'],
+                                           nights=game_nights,
+                                           date=datetime.strptime(season['startdate'], '%Y-%m-%d').date()))
 
 
 def generate_teams():
@@ -194,7 +192,6 @@ def generate_standings():
                 else:
                     standings['ties'].update([game['away'], game['home']])
 
-    
     sorted_divisions = []
     for division in divisions:
         for team in division['teams']:
@@ -212,14 +209,15 @@ def generate_standings():
     standings_dir = os.path.join(season_dir, "standings.md")
 
     write_yaml('standings.yaml', sorted_divisions)
-    
+
     with open(standings_dir, 'w+') as standing_file:
         standing_file.write(standings_template.render(team_list=sorted_divisions,
-                                            year=season['year'],
-                                            season=season['season'],
-                                            date=str(datetime.now().date())))
+                                                      year=season['year'],
+                                                      season=season['season'],
+                                                      date=str(datetime.now().date())))
 
-    playoff_date = datetime.strptime(season['startdate'], '%Y-%m-%d').date() + timedelta(weeks=(season['nights_per_season'] + season['holiday_weeks']))
+    playoff_date = (datetime.strptime(season['startdate'], '%Y-%m-%d').date() +
+                    timedelta(weeks=(season['nights_per_season'] + season['holiday_weeks'])))
 
     if datetime.now().date() > playoff_date - timedelta(weeks=1):
         generate_playoffs()
@@ -239,10 +237,10 @@ def generate_playoffs():
 
     with open(playoffdir, 'w+') as playoff_file:
         playoff_file.write(playoff_template.render(divisions=playoffs,
-                                           year=season['year'],
-                                           season=season['season'],
-                                           date=playoff_date,
-                                           game_date=playoff_date))
+                                                   year=season['year'],
+                                                   season=season['season'],
+                                                   date=playoff_date,
+                                                   game_date=playoff_date))
 
 
 def create_playoffs():
@@ -264,11 +262,11 @@ def create_playoffs():
 
     for sorted_division in sorted_divisions:
         bracket = {}
-        bracket['division'] = division['division']
+        bracket['division'] = sorted_division['division']
 
         m = len(sorted_division['teams'])
 
-        arr = [1,2]
+        arr = [1, 2]
         complements = []
 
         divide(arr, 0, m)
@@ -279,7 +277,8 @@ def create_playoffs():
 
         for bracket in arr:
             for match in bracket:
-                games.append((sorted_division['teams'][match[0]-1]['name'],sorted_division['teams'][match[1]-1]['name']))
+                games.append((sorted_division['teams'][match[0]-1]['name'],
+                              sorted_division['teams'][match[1]-1]['name']))
 
         for x in xrange(0, len(games), 2):
             games.append(("Winner of %s" % str(games[x]), "Winner of %s" % str(games[x+1])))
@@ -287,10 +286,10 @@ def create_playoffs():
         games.append(("Finals", "Finals"))
         playoffs = []
         for idx, game in enumerate(games):
-            playoffs.append({"time":times[idx % len(times)], 
-                            "court": courts[idx % len(courts)],
-                            "home": game[0], 
-                            "away": game[1]})
+            playoffs.append({"time": times[idx % len(times)],
+                             "court": courts[idx % len(courts)],
+                             "home": game[0],
+                             "away": game[1]})
 
         bracket['games'] = playoffs
         playoff_games.append(bracket)
