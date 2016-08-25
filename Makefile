@@ -103,8 +103,9 @@ github: publish
 	git push -fq $(GITHUB_REMOTE) $(GITHUB_PAGES_BRANCH)
 
 travis_github: publish
-	ghp-import -m "Generate Pelican site" -r $(GITHUB_REMOTE) -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
-	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git  $(GITHUB_PAGES_BRANCH) > /dev/null
+	@git remote add upstream https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git > /dev/null
+	ghp-import -m "Generate Pelican site" -r upstream -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+	@git push -fq upstream  $(GITHUB_PAGES_BRANCH) > /dev/null
 
 update_source:
 	git add -A .
@@ -113,8 +114,9 @@ update_source:
 
 travis_update_source:
 	git add -A .
-	ghp-import -m "`date +'%Y-%m-%d %H:%M:%S'`" -r https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git -b $(GITHUB_SOURCE_BRANCH) $(BASEDIR)
-	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git $(GITHUB_SOURCE_BRANCH) > /dev/null
+	git commit -m "`date +'%Y-%m-%d %H:%M:%S'`"
+	@git remote add upstream https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git > /dev/null
+	@git push -fq upstream $(GITHUB_SOURCE_BRANCH) > /dev/null
 
 travis: teams schedule standings travis_update_source travis_github
 
